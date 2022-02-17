@@ -18,9 +18,6 @@ class ApiErrorHandler {
     } else if (ex is PlatformException) {
       FuErrorResponse.snackBarError( "Make sure you are connected to the internet", context, Colors.red,);
       if (kDebugMode) { print("Bad response format 👎"); }
-    } else if (ex is PlatformException) {
-      FuErrorResponse.snackBarError(  "Make sure you are connected to the internet",context, Colors.red, );
-      if (kDebugMode) { print("Bad response format 👎"); }
     } else {
       FuErrorResponse.snackBarError(ex.toString(), context,Colors.red, );
     }

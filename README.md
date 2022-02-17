@@ -134,7 +134,7 @@ and the a lot Extensions
 ```dart
  Container(
   color: context.textTheme.bodyText2!.color,//can yuo get found Context Extensions theme
-  height: context.height / 2,//can yuo get found Context Extensions height (mediaQuerySize.height)
+  height: context.height / 2,//can yuo get found Context Extensions height (mediaQuerySize height)
   width: context.width / 1.5,
   child: const Center(
     child: Text(
@@ -148,25 +148,29 @@ and the a lot Extensions
 
 ## 5- ErrorHandler
 
-can you handler error `Exception`
+can you handler error `Exception`.
+Handling for Error Exception Example  (No Internet Connection 😑
+  or Bad response format 👎
+  or Couldn't find the post 😱 )
+  And if nothing happens, he'll return the default mistake.
 
 ```dart
 
- Future<List<YOURMODDEL>?> getProfile(BuildContext context) async {
+ Future<List<YOURMODEL>?> getProfile(BuildContext context) async {
     try {
        static const Map<String, String> HEADER = {
     "Content-type": "application/json",
       "Accept": "application/json" "Access-Control-Allow-Origin: *",
       HttpHeaders.authorizationHeader: 'YOUR TOKEN'
   };
-      List<YOURMODDEL> profile = [];//your model class
+      List<YOURMODEL> profile = [];//your model class
       http.Response response = await http.get(
         Uri.parse('YOUR URI'),
         headers: HEADER
       );
       if (response.statusCode == 200) {
         List list = json.decode(response.body);
-        profile = list.map((model) => YOURMODDEL.fromJson(model)).toList();
+        profile = list.map((model) => YOURMODEL.fromJson(model)).toList();
         return profile;
       } else {
         var massages = jsonDecode(response.body);
@@ -175,6 +179,12 @@ can you handler error `Exception`
        print(error)
       }
     } catch (err) {
+     /*
+        Handling for Error Exception Example  (No Internet Connection 😑
+       or Bad response format 👎
+       or Couldn't find the post 😱 )
+       And if nothing happens, he'll return the default mistake.
+       */
       ApiErrorHandler.parseError(err, context,);
       print("$err Error");
     }
