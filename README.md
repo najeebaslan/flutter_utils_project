@@ -218,21 +218,26 @@ if(response.statusCode=isSuccessful){
 
 ### `borderRadius`
 
+
+
+### `microseconds`
+
 Returns microseconds duration
 
 ```dart
  5.microseconds
 ```
 
-### `microseconds`
 
+
+### `milliseconds`
 Returns milliseconds duration
 
 ```dart
 5.milliseconds
 ```
 
-### `milliseconds`
+### `seconds`
 
 Returns minutes duration
 
@@ -240,7 +245,8 @@ Returns minutes duration
 5.seconds
 ```
 
-### `seconds`
+
+### `minutes`
 
 Returns hours duration
 
@@ -248,7 +254,7 @@ Returns hours duration
 5.minutes
 ```
 
-### `minutes`
+### `hours`
 
 Returns hours duration
 
@@ -256,16 +262,12 @@ Returns hours duration
  5.hours
 ```
 
-### `hours`
-
+### `days`
 Returns days duration
 
 ```dart
  5.days
 ```
-
-### `days`
-
 ## 7- TextStyle
 
 [FuTextStyle] - gives 13 different type of styles to the text on the basis of size
