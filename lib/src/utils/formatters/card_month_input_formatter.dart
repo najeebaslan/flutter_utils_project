@@ -1,6 +1,5 @@
-
 /*File : FuCardMonthInputFormatter
-Version : 0.0.1
+Version : 1.0.0
 */
 /// [FuCardMonthInputFormatter] - formats the string as per the credit card expiry date format
 
@@ -17,7 +16,7 @@ class FuCardMonthInputFormatter extends TextInputFormatter {
       return newValue;
     }
 
-    var buffer =  StringBuffer();
+    var buffer = StringBuffer();
     for (int i = 0; i < newText.length; i++) {
       buffer.write(newText[i]);
       if (kDebugMode) {
@@ -32,6 +31,6 @@ class FuCardMonthInputFormatter extends TextInputFormatter {
     var string = buffer.toString();
     return newValue.copyWith(
         text: string,
-        selection:  TextSelection.collapsed(offset: string.length));
+        selection: TextSelection.collapsed(offset: string.length));
   }
 }

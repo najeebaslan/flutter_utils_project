@@ -1,5 +1,5 @@
 /*File : nb_utils
-Version : 0.0.1
+Version : 1.0.0
 */
 
 import 'package:flutter/material.dart';
@@ -18,8 +18,6 @@ double textPrimarySizeGlobal = 16;
 FontWeight fontWeightPrimaryGlobal = FontWeight.normal;
 double textSecondarySizeGlobal = 14;
 FontWeight fontWeightSecondaryGlobal = FontWeight.normal;
-
-
 
 const textPrimaryColor = Color(0xFF2E3033);
 const textSecondaryColor = Color(0xFF757575);

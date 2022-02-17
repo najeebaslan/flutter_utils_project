@@ -1,9 +1,10 @@
 /*File : IntExtensions
-Version : 0.0.1
+Version : 1.0.0
 */
 
 import 'package:flutter/widgets.dart';
 import 'package:flutter_utils_project/src/widgets/decoration/decoration.dart';
+
 extension IntExtensions on int? {
   /// Validate given int is not null and returns given value if null.
   int validate({int value = 0}) {

@@ -1,36 +1,30 @@
-
 /*
 * File : FuLog
-* Version : 0.0.1
+* Version : 1.0.0
 * */
 
 /// [FuLog] - provides a way to print anything in the console-
 
 import 'dart:developer';
 
-class FuLog{
-
+class FuLog {
   static bool _enabled = true;
 
-  FuLog(dynamic message){
-    if(_enabled) {
+  FuLog(dynamic message) {
+    if (_enabled) {
       log(message.toString());
     }
   }
 
-  static enable(){
+  static enable() {
     _enabled = true;
   }
 
-  static disable(){
+  static disable() {
     _enabled = false;
   }
 
-  static isEnabled(){
+  static isEnabled() {
     return _enabled;
   }
-
-
-
-
 }

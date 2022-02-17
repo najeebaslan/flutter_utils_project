@@ -1,6 +1,6 @@
 /*
       * File : App Theme
-      * Version : 0.0.1
+      * Version : 1.0.0
       * */
 
 /// [FuAppThemeType.dark] - Applies all the properties for dark theme
@@ -52,9 +52,9 @@ class FuAppTheme {
       colorScheme: const ColorScheme.light(
         primary: Color(0xff3d63ff),
         onPrimary: Colors.white,
-        primaryVariant: Color(0xff0055ff),
+        // primaryVariant: Color(0xff0055ff),
         secondary: Color(0xff495057),
-        secondaryVariant: Color(0xff3cd278),
+        // secondaryVariant: Color(0xff3cd278), deprecated
         onSecondary: Colors.white,
         surface: Color(0xffe2e7f1),
         background: Color(0xff3d63ff),
@@ -164,9 +164,7 @@ class FuAppTheme {
     colorScheme: const ColorScheme.light(
             primary: Color(0xff3d63ff),
             onPrimary: Colors.white,
-            primaryVariant: Color(0xff0055ff),
             secondary: Color(0xff495057),
-            secondaryVariant: Color(0xff3cd278),
             onSecondary: Colors.white,
             surface: Color(0xffe2e7f1),
             background: Color(0xfffefefe),
@@ -206,9 +204,8 @@ class FuAppTheme {
         colorScheme: const ColorScheme.dark(
           primary: Color(0xff3d63ff),
           onPrimary: Colors.white,
-          primaryVariant: Color(0xff0055ff),
+
           secondary: Color(0xff495057),
-          secondaryVariant: Color(0xff3cd278),
           onSecondary: Colors.white,
           surface: Color(0xFF14161A),
           background: Color(0xFF2E2C2C),
@@ -304,7 +301,6 @@ class FuAppTheme {
       /// Color scheme
       colorScheme: const ColorScheme.dark(
         primary: Color(0xff3d63ff),
-        primaryVariant: Color(0xff3d63ff),
         secondary: Color(0xff00cc77),
         secondaryVariant: Color(0xff00cc77),
         background: Color(0xff252525),
@@ -315,7 +311,6 @@ class FuAppTheme {
       ).copyWith(secondary: const Color(0xff3d63ff)));
 
   static ThemeData getThemeFromThemeMode({FuAppThemeType? themeType}) {
-    log(themeType.toString()+'fff');
     themeType ??= defaultThemeType;
     switch (themeType) {
       case FuAppThemeType.light:

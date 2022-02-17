@@ -1,12 +1,10 @@
-
 /*File : FuTextField
-Version : 0.0.1
+Version : 1.0.0
 */
 
 ///There are mainly 2 styles of TextField.
 ///[FuTextFieldStyle.underlined] -  It gives underline to the textField.
 ///[FuTextFieldStyle.outlined] -  It gives outline to the textField.
-
 
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -16,7 +14,6 @@ import 'package:flutter_utils_project/src/themes/text_style.dart';
 import 'package:flutter_utils_project/src/utils/spacing.dart';
 import 'dart:ui' as ui show BoxHeightStyle, BoxWidthStyle;
 
-
 enum FuTextFieldType { email, password, name, address, mobileNumber }
 enum FuTextFieldStyle {
   underlined,
@@ -24,7 +21,6 @@ enum FuTextFieldStyle {
 }
 
 class FuTextField extends StatefulWidget {
-
   final FuTextFieldType textFieldType;
   final FuTextFieldStyle textFieldStyle;
   final bool? autoIcon;
@@ -139,7 +135,7 @@ class FuTextField extends StatefulWidget {
   final bool? alignLabelWithHint;
   final bool? allowSuffixIcon;
 
-  FuTextField(
+  const FuTextField(
       {this.controller,
       this.focusNode,
       this.decoration,
@@ -245,7 +241,9 @@ class FuTextField extends StatefulWidget {
       this.prefixIconColor,
       this.suffixIconColor,
       this.autoFocusedBorder,
-      this.enableHint=true, this.textColor,this.allowSuffixIcon});
+      this.enableHint = true,
+      this.textColor,
+      this.allowSuffixIcon});
 
   @override
   _FuTextFieldState createState() => _FuTextFieldState();
@@ -270,7 +268,7 @@ class _FuTextFieldState extends State<FuTextField> {
   late double? focusedBorderRadius;
   late Color? prefixIconColor;
   late Color? suffixIconColor;
-  late Color? labelTextColor,textColor;
+  late Color? labelTextColor, textColor;
   late Color? cursorColor;
   late bool autoFocusedBorder;
   late InputBorder? border;
@@ -280,7 +278,10 @@ class _FuTextFieldState extends State<FuTextField> {
   void initState() {
     super.initState();
     showPassword = false;
-    obscureText = widget.obscureText ?? widget.textFieldType == FuTextFieldType.password ? true : false;
+    obscureText =
+        widget.obscureText ?? widget.textFieldType == FuTextFieldType.password
+            ? true
+            : false;
   }
 
   @override
@@ -292,12 +293,13 @@ class _FuTextFieldState extends State<FuTextField> {
     focusedBorder = widget.focusedBorder;
     filled = widget.filled;
     fillColor = fillColor ??
-        FuAppTheme.getThemeFromThemeMode().inputDecorationTheme.fillColor??Colors.transparent;
+        FuAppTheme.getThemeFromThemeMode().inputDecorationTheme.fillColor ??
+        Colors.transparent;
     prefixIcon = widget.prefixIcon;
 
     maxLines = widget.maxLines;
 
-      suffixIcon = widget.suffixIcon;
+    suffixIcon = widget.suffixIcon;
     enabledBorderColor = widget.enabledBorderColor;
     focusedBorderColor = widget.focusedBorderColor;
     enabledBorderRadius = widget.enabledBorderRadius;
@@ -310,15 +312,13 @@ class _FuTextFieldState extends State<FuTextField> {
     border = widget.border;
     autoIcon = widget.autoIcon ?? true;
     textColor = widget.textColor ?? labelTextColor;
-    allowSuffixIcon = widget.allowSuffixIcon??false;
-
+    allowSuffixIcon = widget.allowSuffixIcon ?? false;
 
     buildPasswordField();
 
     buildTextFieldStyle();
 
     buildTextFieldType();
-
 
     return TextField(
       style: widget.style ?? FuTextStyle.b1(color: textColor),
@@ -368,10 +368,11 @@ class _FuTextFieldState extends State<FuTextField> {
             isCollapsed: widget.isCollapsed ?? false,
             hoverColor: widget.hoverColor,
             hintMaxLines: widget.hintMaxLines,
-            hintStyle:  widget.hintStyle ?? widget.labelStyle ??  FuTextStyle.b1(color: labelTextColor),
-            hintText: widget.enableHint? (widget.hintText ?? labelText) : null,
+            hintStyle: widget.hintStyle ??
+                widget.labelStyle ??
+                FuTextStyle.b1(color: labelTextColor),
+            hintText: widget.enableHint ? (widget.hintText ?? labelText) : null,
             hintTextDirection: widget.hintTextDirection,
-
           ),
       autocorrect: widget.autocorrect ?? true,
       autofillHints: widget.autofillHints,
@@ -429,21 +430,20 @@ class _FuTextFieldState extends State<FuTextField> {
         filled = filled ?? true;
         fillColor = fillColor ??
             FuAppTheme.getThemeFromThemeMode().inputDecorationTheme.fillColor;
-        enabledBorder = enabledBorder ?? UnderlineInputBorder(
-
-                    borderSide: BorderSide(
-                      color:   enabledBorderColor ??
-                          FuAppTheme.getThemeFromThemeMode()
-                              .inputDecorationTheme
-                              .enabledBorder!
-                              .borderSide
-                              .color,
-                    ),
-                  );
+        enabledBorder = enabledBorder ??
+            UnderlineInputBorder(
+              borderSide: BorderSide(
+                color: enabledBorderColor ??
+                    FuAppTheme.getThemeFromThemeMode()
+                        .inputDecorationTheme
+                        .enabledBorder!
+                        .borderSide
+                        .color,
+              ),
+            );
 
         focusedBorder = focusedBorder ??
             UnderlineInputBorder(
-
               borderSide: BorderSide(
                 color: focusedBorderColor ??
                     FuAppTheme.getThemeFromThemeMode().colorScheme.primary,
@@ -457,18 +457,19 @@ class _FuTextFieldState extends State<FuTextField> {
             FuAppTheme.getThemeFromThemeMode().inputDecorationTheme.fillColor;
         enabledBorder = enabledBorder ??
             OutlineInputBorder(
-                    borderRadius: BorderRadius.all(
-                        Radius.circular(enabledBorderRadius ?? 8)),
-                    borderSide: BorderSide(
-                      color: autoFocusedBorder ? Colors.transparent :  enabledBorderColor ??
-                          FuAppTheme.getThemeFromThemeMode()
-                              .inputDecorationTheme
-                              .enabledBorder!
-                              .borderSide
-                              .color,
-                    ),
-
-                );
+              borderRadius:
+                  BorderRadius.all(Radius.circular(enabledBorderRadius ?? 8)),
+              borderSide: BorderSide(
+                color: autoFocusedBorder
+                    ? Colors.transparent
+                    : enabledBorderColor ??
+                        FuAppTheme.getThemeFromThemeMode()
+                            .inputDecorationTheme
+                            .enabledBorder!
+                            .borderSide
+                            .color,
+              ),
+            );
 
         focusedBorder = focusedBorder ??
             OutlineInputBorder(
@@ -496,7 +497,7 @@ class _FuTextFieldState extends State<FuTextField> {
                       color: prefixIconColor,
                     )
                   : null);
-                
+
           labelText = "Email Address";
           keyboardType = keyboardType ?? TextInputType.emailAddress;
           break;
@@ -555,17 +556,26 @@ class _FuTextFieldState extends State<FuTextField> {
 
   void buildPasswordField() {
     if (widget.textFieldType == FuTextFieldType.password) {
-      suffixIcon = allowSuffixIcon? InkWell(
-          onTap: () {
-            setState(() {
-              showPassword = !showPassword;
-              obscureText = !obscureText!;
-            });
-          },
-          child: (showPassword
-              ? Icon(Icons.visibility_outlined, color: widget.suffixIconColor,size: 20,)
-              : Icon(Icons.visibility_off_outlined, color: widget.suffixIconColor, size: 20,))) : widget.suffixIcon;
+      suffixIcon = allowSuffixIcon
+          ? InkWell(
+              onTap: () {
+                setState(() {
+                  showPassword = !showPassword;
+                  obscureText = !obscureText!;
+                });
+              },
+              child: (showPassword
+                  ? Icon(
+                      Icons.visibility_outlined,
+                      color: widget.suffixIconColor,
+                      size: 20,
+                    )
+                  : Icon(
+                      Icons.visibility_off_outlined,
+                      color: widget.suffixIconColor,
+                      size: 20,
+                    )))
+          : widget.suffixIcon;
     }
   }
 }
-

@@ -1,6 +1,5 @@
-
 /*File : FuText
-Version : 0.0.1
+Version : 1.0.0
 */
 
 /// There are mainly 13 types of Text widgets.
@@ -9,10 +8,10 @@ Version : 0.0.1
 import 'package:flutter/material.dart';
 import 'package:flutter_utils_project/src/themes/text_style.dart';
 
-
 class FuText extends StatelessWidget {
   //Key
 
+  @override
   final Key? key;
 
   final String text;
@@ -40,7 +39,7 @@ class FuText extends StatelessWidget {
   final double? textScaleFactor;
   final TextWidthBasis? textWidthBasis;
 
-  FuText(this.text,
+  const FuText(this.text,
       {this.textStyle,
       this.fontWeight = 500,
       this.muted = false,
@@ -65,7 +64,7 @@ class FuText extends StatelessWidget {
       this.textScaleFactor,
       this.textWidthBasis});
 
-  FuText.h1(this.text,
+  const FuText.h1(this.text,
       {this.textStyle,
       this.fontWeight = 500,
       this.muted = false,
@@ -90,7 +89,7 @@ class FuText extends StatelessWidget {
       this.textScaleFactor,
       this.textWidthBasis});
 
-  FuText.h2(this.text,
+  const FuText.h2(this.text,
       {this.textStyle,
       this.fontWeight = 500,
       this.muted = false,
@@ -115,7 +114,7 @@ class FuText extends StatelessWidget {
       this.textScaleFactor,
       this.textWidthBasis});
 
-  FuText.h3(this.text,
+  const FuText.h3(this.text,
       {this.textStyle,
       this.fontWeight = 500,
       this.muted = false,
@@ -140,7 +139,7 @@ class FuText extends StatelessWidget {
       this.textScaleFactor,
       this.textWidthBasis});
 
-  FuText.h4(this.text,
+  const FuText.h4(this.text,
       {this.textStyle,
       this.fontWeight = 500,
       this.muted = false,
@@ -165,7 +164,7 @@ class FuText extends StatelessWidget {
       this.textScaleFactor,
       this.textWidthBasis});
 
-  FuText.h5(this.text,
+  const FuText.h5(this.text,
       {this.textStyle,
       this.fontWeight = 500,
       this.muted = false,
@@ -190,7 +189,7 @@ class FuText extends StatelessWidget {
       this.textScaleFactor,
       this.textWidthBasis});
 
-  FuText.h6(this.text,
+  const FuText.h6(this.text,
       {this.textStyle,
       this.fontWeight = 500,
       this.muted = false,
@@ -215,7 +214,7 @@ class FuText extends StatelessWidget {
       this.textScaleFactor,
       this.textWidthBasis});
 
-  FuText.sh1(this.text,
+  const FuText.sh1(this.text,
       {this.textStyle,
       this.fontWeight = 500,
       this.muted = false,
@@ -240,7 +239,7 @@ class FuText extends StatelessWidget {
       this.textScaleFactor,
       this.textWidthBasis});
 
-  FuText.sh2(this.text,
+  const FuText.sh2(this.text,
       {this.textStyle,
       this.fontWeight = 500,
       this.muted = false,
@@ -265,7 +264,7 @@ class FuText extends StatelessWidget {
       this.textScaleFactor,
       this.textWidthBasis});
 
-  FuText.b1(this.text,
+  const FuText.b1(this.text,
       {this.textStyle,
       this.fontWeight = 500,
       this.muted = false,
@@ -290,7 +289,7 @@ class FuText extends StatelessWidget {
       this.textScaleFactor,
       this.textWidthBasis});
 
-  FuText.b2(this.text,
+  const FuText.b2(this.text,
       {this.textStyle,
       this.fontWeight = 500,
       this.muted = false,
@@ -315,7 +314,7 @@ class FuText extends StatelessWidget {
       this.textScaleFactor,
       this.textWidthBasis});
 
-  FuText.button(this.text,
+  const FuText.button(this.text,
       {this.textStyle,
       this.fontWeight = 500,
       this.muted = false,
@@ -340,7 +339,7 @@ class FuText extends StatelessWidget {
       this.textScaleFactor,
       this.textWidthBasis});
 
-  FuText.caption(this.text,
+  const FuText.caption(this.text,
       {this.textStyle,
       this.fontWeight = 500,
       this.muted = false,
@@ -365,7 +364,7 @@ class FuText extends StatelessWidget {
       this.textScaleFactor,
       this.textWidthBasis});
 
-  FuText.overline(this.text,
+  const FuText.overline(this.text,
       {this.textStyle,
       this.fontWeight = 500,
       this.muted = false,

@@ -1,5 +1,5 @@
 /*File : FuContainer
-Version : 0.0.1
+Version : 1.0.0
 */
 
 /// There are mainly 2 types of container .
@@ -8,7 +8,6 @@ Version : 0.0.1
 /// [FuContainer.rounded] - provides rounded shape to the container for the given height and width of the container.
 
 // import 'package:flutter_utils_project/themes/app_theme.dart';
-
 
 import 'package:flutter/material.dart';
 import 'package:flutter_utils_project/src/themes/app_theme.dart';

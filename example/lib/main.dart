@@ -11,11 +11,11 @@
       ChangeNotifierProvider<FuAppThemeNotifier>(
       create: (_) => FuAppThemeNotifier(),
       ),
-      ], child: const HomePage()));
+      ], child: const MyApp()));
       }
 
-      class HomePage extends StatelessWidget {
-      const HomePage({Key? key}) : super(key: key);
+      class MyApp extends StatelessWidget {
+      const MyApp({Key? key}) : super(key: key);
 
       @override
       Widget build(BuildContext context) {
@@ -25,20 +25,20 @@
       debugShowCheckedModeBanner: false,
       title: "Flutter Utils Project",
       theme: FuAppTheme.getThemeFromThemeMode(),
-      home: const MyCustomWidget() //navigator to your HomeScreen
+      home: const HomePage() //navigator to your HomeScreen
       );
       });
       }
       }
 
-      class MyCustomWidget extends StatefulWidget {
-      const MyCustomWidget({Key? key}) : super(key: key);
+      class HomePage extends StatefulWidget {
+      const HomePage({Key? key}) : super(key: key);
 
       @override
       _MyCustomWidgetState createState() => _MyCustomWidgetState();
       }
 
-      class _MyCustomWidgetState extends State<MyCustomWidget> {
+      class _MyCustomWidgetState extends State<HomePage> {
       bool isExpanded = false;
       bool isExpanded1 = false;
 
@@ -87,9 +87,14 @@
       */
 
       children: [
-
-      Row(children: [ FuText('Example TextField', )], ).paddingBottom(12),
-
+      Row(children: const[  FuText('Example TextField', )], ).paddingBottom(12),
+      FxDottedLine(child: const Text('FxDottedLine'),
+      color: context.theme.primaryColor,
+      dottedLength: 12,strokeWidth: 6,
+      width: 100,
+      height: 100,
+      space: 1,
+      ),
       FuContainer.none(
       borderRadius: radius(),
 
@@ -120,7 +125,7 @@
 
       15.height,
 
-      Row( children: [ FuText( 'Example SharedPreferences', ) ],).paddingBottom(12),
+      Row( children:const [  FuText( 'Example SharedPreferences', ) ],).paddingBottom(12),
 
       FuContainer.none(
       borderRadius: radius(),
@@ -147,7 +152,7 @@
       backgroundColor: FuAppTheme.isDarkMode
       ? FuAppTheme.theme.backgroundColor.withOpacity(1)
       : FuAppTheme.theme.primaryColor,
-      onPressed:() =>FuSharedPreferences.setString('You Key', _textController.text),
+      onPressed:() =>FuSharedPreferences.setString('Your Key', _textController.text),
 
       child: FuText('setString', color: FuAppTheme.theme.textTheme.overline?.color,)
       ).paddingAll(3),//(paddingAll)=>widget_extensions
@@ -157,7 +162,7 @@
       ? FuAppTheme.theme.backgroundColor.withOpacity(1)
       : FuAppTheme.theme.primaryColor,
       onPressed: () async {
-      var getString = await FuSharedPreferences.getString( 'You Key',);
+      var getString = await FuSharedPreferences.getString( 'Your Key',);
       FuLog(getString.toString());
       },
       child: FuText( 'getString',
@@ -168,7 +173,7 @@
       backgroundColor: FuAppTheme.isDarkMode
       ? FuAppTheme.theme.backgroundColor.withOpacity(1)
       : FuAppTheme.theme.primaryColor,
-      onPressed: () async =>await FuSharedPreferences.deleteString( 'You Key',),
+      onPressed: () async =>await FuSharedPreferences.deleteString( 'Your Key',),
       child: FuText( 'delete key',
       color: FuAppTheme.theme.textTheme.overline?.color,
       )).paddingOnly(left: 3),
@@ -177,7 +182,7 @@
       backgroundColor: FuAppTheme.isDarkMode
       ? FuAppTheme.theme.backgroundColor.withOpacity(1)
       : FuAppTheme.theme.primaryColor,
-      onPressed: () async => await FuSharedPreferences.clearAllData('You Key'),
+      onPressed: () async => await FuSharedPreferences.clearAllData('Your Key'),
       child: FuText('clear',
       color: FuAppTheme.theme.textTheme.overline?.color,
       )).paddingOnly(left: 3),
@@ -241,8 +246,10 @@
       onCreditCardNumberChanged: (creditCardNumber) {
       ' Example creditCardNumber';
       },
-      ))
+      )),
+  
       ],
+      
       )).paddingAll(12),
       );
       }

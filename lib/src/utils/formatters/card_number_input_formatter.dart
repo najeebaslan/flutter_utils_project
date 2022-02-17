@@ -1,6 +1,5 @@
-
 /*File : FuCardNumberInputFormatter
-Version : 0.0.1
+Version : 1.0.0
 */
 /// [FuCardNumberInputFormatter] - formats the given string as per the credit card number format.
 
@@ -17,7 +16,7 @@ class FuCardNumberInputFormatter extends TextInputFormatter {
       return newValue;
     }
 
-    var buffer =  StringBuffer();
+    var buffer = StringBuffer();
     for (int i = 0; i < newText.length; i++) {
       buffer.write(newText[i]);
       if (kDebugMode) {
@@ -32,6 +31,6 @@ class FuCardNumberInputFormatter extends TextInputFormatter {
     var string = buffer.toString();
     return newValue.copyWith(
         text: string,
-        selection:  TextSelection.collapsed(offset: string.length));
+        selection: TextSelection.collapsed(offset: string.length));
   }
 }

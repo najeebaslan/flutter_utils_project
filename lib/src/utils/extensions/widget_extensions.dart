@@ -1,5 +1,5 @@
 /*File : WidgetExtension
-Version : 0.0.1
+Version : 1.0.0
 */
 
 import 'package:flutter_utils_project/src/widgets/decoration/decoration.dart';

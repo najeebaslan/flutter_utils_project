@@ -1,15 +1,12 @@
 /*
 * File : App Theme
-* Version : 0.0.1
+* Version : 1.0.0
 * */
 
 /// [FuCustomTheme] - provides the different properties for the custom theme.
 
-import 'dart:developer';
 
 import 'package:flutter/widgets.dart';
-import 'package:flutter_utils_project/flutter_utils_project.dart';
-
 enum FuCustomThemeType { light, dark }
 
 class FuCustomTheme {
@@ -29,11 +26,19 @@ class FuCustomTheme {
       onSuccess,
       onError;
 
-  final Color lightBlack, red, green, yellow, orange, blue, purple, pink, brown,withe,blueToWithe;
+  final Color lightBlack,
+      red,
+      green,
+      yellow,
+      orange,
+      blue,
+      purple,
+      pink,
+      brown,
+      withe,
+      blueToWithe;
 
   FuCustomTheme({
-   
-
     this.border1 = const Color(0xffeeeeee),
     this.border2 = const Color(0xffe6e6e6),
     this.bgLayer1 = const Color(0xfff0f0f0),
@@ -62,8 +67,6 @@ class FuCustomTheme {
     this.brown = const Color(0xffA52A2A),
     this.withe = const Color(0xffeeeeee),
     this.blueToWithe = const Color(0xff0000ff),
-
-    
   });
 
   static FuCustomTheme lightCustomAppTheme = FuCustomTheme(
@@ -73,7 +76,7 @@ class FuCustomTheme {
     onDisabled: const Color(0xffffffff),
     colorInfo: const Color(0xffff784b),
     colorWarning: const Color(0xffffc837),
-    withe : const Color(0xffeeeeee),
+    withe: const Color(0xffeeeeee),
     colorSuccess: const Color(0xff3cd278),
     shadowColor: const Color(0xffd9d9d9),
     onInfo: const Color(0xffffffff),
@@ -81,8 +84,7 @@ class FuCustomTheme {
     onWarning: const Color(0xffffffff),
     colorError: const Color(0xfff0323c),
     onError: const Color(0xffffffff),
-    blueToWithe : const Color(0xff0000ff),
-
+    blueToWithe: const Color(0xff0000ff),
   );
 
   static FuCustomTheme darkCustomAppTheme = FuCustomTheme(
@@ -100,8 +102,7 @@ class FuCustomTheme {
       onSuccess: const Color(0xffffffff),
       onWarning: const Color(0xffffffff),
       colorError: const Color(0xfff0323c),
-       blueToWithe : const Color(0xffffffff),
-
+      blueToWithe: const Color(0xffffffff),
       onError: const Color(0xffffffff));
 
   static FuCustomThemeType defaultThemeType = FuCustomThemeType.light;

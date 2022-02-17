@@ -1,5 +1,5 @@
 /*File : AutoSizeText
-Version : 0.0.1
+Version : 1.0.0
 */
 import 'dart:async';
 import 'package:flutter/widgets.dart';
@@ -460,8 +460,6 @@ class _AutoSizeTextState extends State<AutoSizeText> {
     super.dispose();
   }
 }
-
-
 
 /// Controller to synchronize the fontSize of multiple AutoSizeTexts.
 class AutoSizeGroup {

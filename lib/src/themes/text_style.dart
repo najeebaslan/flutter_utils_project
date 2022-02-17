@@ -1,13 +1,9 @@
 /*
 * File : App Theme
-* Version : 0.0.1
+* Version : 1.0.0
 * */
 
-
-
 /// [FuTextStyle] - gives 13 different type of styles to the text on the basis of size
-
-
 
 import 'package:flutter/widgets.dart';
 import 'package:flutter_utils_project/flutter_utils_project.dart';
@@ -30,7 +26,7 @@ enum ToolTextSize {
 }
 
 class FuTextStyle {
-  static  String _fontFamily = '';
+  static String _fontFamily = '';
 
   static Map<int, FontWeight> _defaultFontWeight = {
     100: FontWeight.w100,
@@ -87,7 +83,7 @@ class FuTextStyle {
       double? height,
       double wordSpacing = 0,
       double? fontSize}) {
-    double? finalFontSize = fontSize != null ? fontSize : textStyle?.fontSize;
+    double? finalFontSize = fontSize ?? textStyle?.fontSize;
 
     Color? finalColor;
     if (color == null) {
@@ -102,14 +98,14 @@ class FuTextStyle {
           : (muted ? color.withAlpha(200) : color);
     }
 //this is main TextStyle
-    return  TextStyle(
+    return TextStyle(
         fontSize: finalFontSize,
         fontWeight: _defaultFontWeight[fontWeight] ?? FontWeight.w400,
         letterSpacing: letterSpacing,
         color: finalColor,
         decoration: decoration,
         height: height,
-        fontFamily:_fontFamily ,
+        fontFamily: _fontFamily,
         wordSpacing: wordSpacing);
   }
 
@@ -404,8 +400,9 @@ class FuTextStyle {
         color: color,
         height: height,
         muted: muted,
-        letterSpacing:
-            letterSpacing ?? _defaultLetterSpacing[ToolTextSize.caption] ?? 0.15,
+        letterSpacing: letterSpacing ??
+            _defaultLetterSpacing[ToolTextSize.caption] ??
+            0.15,
         fontWeight: fontWeight,
         decoration: decoration,
         textStyle: textStyle,
@@ -429,15 +426,17 @@ class FuTextStyle {
         color: color,
         height: height,
         muted: muted,
-        letterSpacing:
-            letterSpacing ?? _defaultLetterSpacing[ToolTextSize.overline] ?? 0.15,
+        letterSpacing: letterSpacing ??
+            _defaultLetterSpacing[ToolTextSize.overline] ??
+            0.15,
         fontWeight: fontWeight,
         decoration: decoration,
         textStyle: textStyle,
         wordSpacing: wordSpacing,
         xMuted: xMuted);
   }
-//this is for if you want change fontFamily 
+
+//this is for if you want change fontFamily
   static void changeFontFamily(String fontFamily) {
     FuTextStyle._fontFamily = fontFamily;
   }
@@ -456,124 +455,123 @@ class FuTextStyle {
       _defaultLetterSpacing;
 
   static Map<int, FontWeight> get defaultFontWeight => _defaultFontWeight;
-  
 
 // Bold Text Style
-static TextStyle boldTextStyle({
-  int? size,
-  Color? color,
-  FontWeight? weight,
-  String? fontFamily,
-  double? letterSpacing,
-  FontStyle? fontStyle,
-  double? wordSpacing,
-  TextDecoration? decoration,
-  TextDecorationStyle? textDecorationStyle,
-  TextBaseline? textBaseline,
-  Color? decorationColor,
-  Color? backgroundColor,
-  double? height,
-}) {
-  return TextStyle(
-    fontSize: size != null ? size.toDouble() : textBoldSizeGlobal, //
-    color: color ?? textPrimaryColorGlobal, //
-    fontWeight: weight ?? fontWeightBoldGlobal, //
-    fontFamily: fontFamily ?? fontFamilyBoldGlobal, //
-    letterSpacing: letterSpacing,
-    fontStyle: fontStyle,
-    decoration: decoration,
-    decorationStyle: textDecorationStyle,
-    decorationColor: decorationColor,
-    wordSpacing: wordSpacing,
-    textBaseline: textBaseline,
-    backgroundColor: backgroundColor,
-    height: height,
-    overflow: TextOverflow.ellipsis,
-  );
-}
+  static TextStyle boldTextStyle({
+    int? size,
+    Color? color,
+    FontWeight? weight,
+    String? fontFamily,
+    double? letterSpacing,
+    FontStyle? fontStyle,
+    double? wordSpacing,
+    TextDecoration? decoration,
+    TextDecorationStyle? textDecorationStyle,
+    TextBaseline? textBaseline,
+    Color? decorationColor,
+    Color? backgroundColor,
+    double? height,
+  }) {
+    return TextStyle(
+      fontSize: size != null ? size.toDouble() : textBoldSizeGlobal, //
+      color: color ?? textPrimaryColorGlobal, //
+      fontWeight: weight ?? fontWeightBoldGlobal, //
+      fontFamily: fontFamily ?? fontFamilyBoldGlobal, //
+      letterSpacing: letterSpacing,
+      fontStyle: fontStyle,
+      decoration: decoration,
+      decorationStyle: textDecorationStyle,
+      decorationColor: decorationColor,
+      wordSpacing: wordSpacing,
+      textBaseline: textBaseline,
+      backgroundColor: backgroundColor,
+      height: height,
+      overflow: TextOverflow.ellipsis,
+    );
+  }
 
 // Primary Text Style
-static TextStyle primaryTextStyle({
-  int? size,
-  Color? color,
-  FontWeight? weight,
-  String? fontFamily,
-  double? letterSpacing,
-  FontStyle? fontStyle,
-  double? wordSpacing,
-  TextDecoration? decoration,
-  TextDecorationStyle? textDecorationStyle,
-  TextBaseline? textBaseline,
-  Color? decorationColor,
-  Color? backgroundColor,
-  double? height,
-}) {
-  return TextStyle(
-    fontSize: size != null ? size.toDouble() : textPrimarySizeGlobal,
-    color: color ?? textPrimaryColorGlobal,
-    fontWeight: weight ?? fontWeightPrimaryGlobal,
-    fontFamily: fontFamily ?? fontFamilyPrimaryGlobal,
-    letterSpacing: letterSpacing,
-    fontStyle: fontStyle,
-    decoration: decoration,
-    decorationStyle: textDecorationStyle,
-    decorationColor: decorationColor,
-    wordSpacing: wordSpacing,
-    textBaseline: textBaseline,
-    backgroundColor: backgroundColor,
-    height: height,
-  );
-}
+  static TextStyle primaryTextStyle({
+    int? size,
+    Color? color,
+    FontWeight? weight,
+    String? fontFamily,
+    double? letterSpacing,
+    FontStyle? fontStyle,
+    double? wordSpacing,
+    TextDecoration? decoration,
+    TextDecorationStyle? textDecorationStyle,
+    TextBaseline? textBaseline,
+    Color? decorationColor,
+    Color? backgroundColor,
+    double? height,
+  }) {
+    return TextStyle(
+      fontSize: size != null ? size.toDouble() : textPrimarySizeGlobal,
+      color: color ?? textPrimaryColorGlobal,
+      fontWeight: weight ?? fontWeightPrimaryGlobal,
+      fontFamily: fontFamily ?? fontFamilyPrimaryGlobal,
+      letterSpacing: letterSpacing,
+      fontStyle: fontStyle,
+      decoration: decoration,
+      decorationStyle: textDecorationStyle,
+      decorationColor: decorationColor,
+      wordSpacing: wordSpacing,
+      textBaseline: textBaseline,
+      backgroundColor: backgroundColor,
+      height: height,
+    );
+  }
 
 // Secondary Text Style
-static TextStyle secondaryTextStyle({
-  int? size,
-  Color? color,
-  FontWeight? weight,
-  String? fontFamily,
-  double? letterSpacing,
-  FontStyle? fontStyle,
-  double? wordSpacing,
-  TextDecoration? decoration,
-  TextDecorationStyle? textDecorationStyle,
-  TextBaseline? textBaseline,
-  Color? decorationColor,
-  Color? backgroundColor,
-  double? height,
-}) {
-  return TextStyle(
-    fontSize: size != null ? size.toDouble() : textSecondarySizeGlobal,
-    color: color ?? textSecondaryColorGlobal,
-    fontWeight: weight ?? fontWeightSecondaryGlobal,
-    fontFamily: fontFamily ?? fontFamilySecondaryGlobal,
-    letterSpacing: letterSpacing,
-    fontStyle: fontStyle,
-    decoration: decoration,
-    decorationStyle: textDecorationStyle,
-    decorationColor: decorationColor,
-    wordSpacing: wordSpacing,
-    textBaseline: textBaseline,
-    backgroundColor: backgroundColor,
-    height: height,
-  );
-}
+  static TextStyle secondaryTextStyle({
+    int? size,
+    Color? color,
+    FontWeight? weight,
+    String? fontFamily,
+    double? letterSpacing,
+    FontStyle? fontStyle,
+    double? wordSpacing,
+    TextDecoration? decoration,
+    TextDecorationStyle? textDecorationStyle,
+    TextBaseline? textBaseline,
+    Color? decorationColor,
+    Color? backgroundColor,
+    double? height,
+  }) {
+    return TextStyle(
+      fontSize: size != null ? size.toDouble() : textSecondarySizeGlobal,
+      color: color ?? textSecondaryColorGlobal,
+      fontWeight: weight ?? fontWeightSecondaryGlobal,
+      fontFamily: fontFamily ?? fontFamilySecondaryGlobal,
+      letterSpacing: letterSpacing,
+      fontStyle: fontStyle,
+      decoration: decoration,
+      decorationStyle: textDecorationStyle,
+      decorationColor: decorationColor,
+      wordSpacing: wordSpacing,
+      textBaseline: textBaseline,
+      backgroundColor: backgroundColor,
+      height: height,
+    );
+  }
 
 // Create Rich Text
-static RichText createRichText({
-  required List<TextSpan> list,
-  TextOverflow overflow = TextOverflow.clip,
-  int? maxLines,
-  TextAlign textAlign = TextAlign.left,
-  TextDirection? textDirection,
-  StrutStyle? strutStyle,
-}) {
-  return RichText(
-    text: TextSpan(children: list),
-    overflow: overflow,
-    maxLines: maxLines,
-    textAlign: textAlign,
-    textDirection: textDirection,
-    strutStyle: strutStyle,
-  );
-}
+  static RichText createRichText({
+    required List<TextSpan> list,
+    TextOverflow overflow = TextOverflow.clip,
+    int? maxLines,
+    TextAlign textAlign = TextAlign.left,
+    TextDirection? textDirection,
+    StrutStyle? strutStyle,
+  }) {
+    return RichText(
+      text: TextSpan(children: list),
+      overflow: overflow,
+      maxLines: maxLines,
+      textAlign: textAlign,
+      textDirection: textDirection,
+      strutStyle: strutStyle,
+    );
+  }
 }

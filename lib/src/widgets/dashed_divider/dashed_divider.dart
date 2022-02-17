@@ -1,12 +1,10 @@
-
 /*File : FuDashedDivider
-Version : 0.0.1
+Version : 1.0.0
 */
 
 /// [FuDashedDivider] - Provides a dashed line to the screen for the given width and height.
 
 import 'package:flutter/material.dart';
-
 
 class FuDashedDivider extends StatelessWidget {
   final double height;
@@ -14,7 +12,11 @@ class FuDashedDivider extends StatelessWidget {
   final double dashWidth;
   final double dashSpace;
 
-  const FuDashedDivider({this.height = 1, this.color = Colors.black, this.dashWidth=10, this.dashSpace=10});
+  const FuDashedDivider(
+      {this.height = 1,
+      this.color = Colors.black,
+      this.dashWidth = 10,
+      this.dashSpace = 10});
 
   @override
   Widget build(BuildContext context) {

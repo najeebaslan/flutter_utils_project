@@ -1,5 +1,5 @@
 /*File : StringExtension
-Version : 0.0.1
+Version : 1.0.0
 */
 
 import 'dart:convert';
@@ -244,10 +244,6 @@ extension StringExtension on String? {
 
     return repeatedString;
   }
-
- 
-
-
 
   /// Return number of words ina given String
   int countWords() {

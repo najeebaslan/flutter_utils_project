@@ -1,6 +1,6 @@
 /*
 * File : FuShadow
-* Version : 0.0.1
+* Version : 1.0.0
 * */
 
 /// [FuShadow] - provides custom shadow to the widget
@@ -61,7 +61,7 @@ class FuShadow {
           this.offset = Offset(-elevation, elevation * 0.25);
           break;
         case ToolShadowPosition.center:
-          this.offset = Offset(0, 0);
+          this.offset = const Offset(0, 0);
           break;
         //TODO: Shadow problem
         case ToolShadowPosition.centerRight:

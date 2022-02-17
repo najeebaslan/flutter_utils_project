@@ -1,6 +1,6 @@
 /*
 * File : App Theme Notifier (Listener)
-* Version : 0.0.1
+* Version : 1.0.0
 * */
 
 /// [FuAppThemeNotifier] - notifies the app by giving the theme to the app
@@ -18,9 +18,9 @@ class FuAppThemeNotifier extends ChangeNotifier {
   }
 
   init() async {
-
     SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
-    int fxAppThemeMode = sharedPreferences.getInt("fx_app_theme_mode") ?? FuAppThemeType.light.index;
+    int fxAppThemeMode = sharedPreferences.getInt("fx_app_theme_mode") ??
+        FuAppThemeType.light.index;
     changeAppThemeMode(FuAppThemeType.values[fxAppThemeMode]);
 
     notifyListeners();
@@ -29,19 +29,17 @@ class FuAppThemeNotifier extends ChangeNotifier {
   changeAppThemeMode(FuAppThemeType? themeType) async {
     FuAppTheme.defaultThemeType = themeType!;
     if (themeType.index == 1) {
-      FuCustomTheme.defaultThemeType =FuCustomThemeType.values[FuAppThemeType.dark.index];
+      FuCustomTheme.defaultThemeType =
+          FuCustomThemeType.values[FuAppThemeType.dark.index];
       FuAppTheme.isDarkMode = true;
     } else if (themeType.index == 0) {
-      FuCustomTheme.defaultThemeType = FuCustomThemeType.values[FuAppThemeType.light.index];
+      FuCustomTheme.defaultThemeType =
+          FuCustomThemeType.values[FuAppThemeType.light.index];
       FuAppTheme.isDarkMode = false;
     }
-  
+
     SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
     await sharedPreferences.setInt("fx_app_theme_mode", themeType.index);
-
-    log(FuAppTheme.getThemeFromThemeMode().toString());
     notifyListeners();
   }
-
-
 }

@@ -28,6 +28,10 @@ This library works to provide the tools and parts needed to build your project f
 - `TextFormField` (Type) => none - bordered - roundBordered - rounded.
 - `Text` => There are mainly 13 types of Text widgets.
 - `Patterns` for url - phone - image - audio - text - document - excel - ppt - apk - pdf - html.
+- `Log` 
+- `countryCode`
+- `ErrorResponse`
+- `Decoration`
 
 ## 1- How to use the SharedPreferences
 
@@ -380,23 +384,107 @@ const Text('FuSpacing')
 
 ## 10- WidgetExtension
 ```dart
+  //Padding Widget form Height 
   Text('withHeight').withHeight(20),
+  //Padding Widget form Width Height  
   Text('widthAndHeight').widthAndHeight(height: 12, width: 11),
+  //hide Widget if value equal false else equal true visible widget
   Text('visible').visible(false),
+  //you can onTap for any widget
   Text('onTap').onTap(() { print('print'); }),
+  //you can withTooltip for any widget
   Text('withTooltip').withTooltip(msg: 'Text'),
+  //Padding Widget form Width All 
   Text('paddingAll').paddingAll(12),
+  //Padding Widget form Width Bottom 
   Text('paddingBottom').paddingBottom(12),
+  //Padding Widget form Width Left 
   Text('paddingLeft').paddingLeft(12),
+  //Padding Widget form Width Right 
   Text('paddingRight').paddingRight(12),
+  //Padding Widget form Width Only 
   Text('paddingOnly').paddingOnly(bottom: 30,top: 50,left: 0,right: 12), 
-  Text('paddingOnly').paddingOnly(bottom: 30, top: 50, left: 0, right: 12),
+  //you can expand for widget
   Text('expand').expand(),
+  //you can center for any widget
   Text('center').center(),
+  //you can fit for widget
   Text('fit').fit(),
+  //you can flexible for widget
   Text('flexible').flexible(),
+  //Padding Widget form Width Only 
   Text('paddingSymmetric').paddingSymmetric(),
+  //this is same SizedBox()
   WidgetExtension.empty(),
 
         
 ```
+
+## 11- FuLog 
+```dart
+ FuLog('Anything');
+```
+
+
+## 12- countryCode
+get all name and code all country
+```dart
+  Column(children: List<Widget>.generate(FxTextUtils. countryCode.length, (index) {
+  FxTextUtils. countryCode.toList();
+  var data= FxTextUtils. countryCode[index];
+  return Row(
+  children: [
+  Text(data['name']),
+  12.width,
+  Text(data['code'],style: TextStyle(color: context.theme.primaryColor),),
+  ],
+  );
+  },)),
+```
+
+## 13- FuWidgetErrorResponse 
+```dart
+  FuErrorResponse.snackBarError(
+  error: "Bad response format 👎",
+  context: context,
+  color: Colors.red,
+  );
+
+```
+
+
+## 14- FuDashedDivider
+this is same Divider but  has Dashed Example this shape [`- - - - - - - - - - - - `]
+```dart
+FuDashedDivider( color:FuAppTheme.getThemeFromThemeMode().colorScheme.onBackground, ),
+```
+
+## 15- Decoration
+#### `boxDecorationDefault`
+
+```dart
+Container(child: Text('boxDecorationDefault'),decoration: boxDecorationDefault(),),
+```
+
+#### boxDecorationWithShadow
+```dart
+Container(child: const Text('boxDecorationWithShadow'),decoration: boxDecorationWithShadow(shadowColor: context.theme.primaryColor),),
+```
+
+
+
+#### `radius`
+
+```dart
+FuContainer.none(borderRadius: radius(),child:Text('radius'))
+
+```
+#### `radiusOnly`
+```dart
+
+FuContainer.none(borderRadius:  radiusOnly(),child:Text('radiusOnly'))
+``` 
+#### ShapeBorder dialogShape
+
+
+

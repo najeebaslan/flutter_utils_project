@@ -1,8 +1,8 @@
 /*File : FxDottedLineCorner
-Version : 0.0.1
+Version : 1.0.0
 */
 /// [FxDottedLine] - gives a dotted line.
-//this is do same divaider but this is doing on all round widget 
+//this is do same divider but this is doing on all round widget 
 
 import 'dart:ui';
 
@@ -170,7 +170,7 @@ class _DottedLinePainter extends CustomPainter {
       double length = isHorizontal ? size.width : size.height;
       double count = (length) / (dottedLength! + space!);
       if (count < 2.0) return;
-      var startOffset = Offset(0, 0);
+      var startOffset = const Offset(0, 0);
       for (int i = 0; i < count.toInt(); i++) {
         canvas.drawLine(
             startOffset,

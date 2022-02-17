@@ -1,5 +1,5 @@
 /*File : FuCard
-Version : 0.0.1
+Version : 1.0.0
 */
 /// There are mainly 2 types of card .
 ///

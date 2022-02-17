@@ -1,5 +1,5 @@
 /*File : FuCreditCard
-Version : 0.0.1
+Version : 1.0.0
 */
 
 /// [FuCreditCard] - customisable credit card with all the necessary details in it.
@@ -15,10 +15,10 @@ import 'package:flutter_utils_project/src/utils/spacing.dart';
 import 'package:flutter_utils_project/src/widgets/text/text.dart';
 import 'package:flutter_utils_project/src/widgets/text_field/text_field.dart';
 
-typedef void OnCreditCardNumberChanged(String creditCardNumber);
-typedef void OnCreditCardDateChanged(String creditCardDate);
-typedef void OnCreditCardNameChanged(String creditCardName);
-typedef void OnCreditCardCVVChanged(String creditCardCVV);
+typedef OnCreditCardNumberChanged = void Function(String creditCardNumber);
+typedef OnCreditCardDateChanged = void Function(String creditCardDate);
+typedef OnCreditCardNameChanged = void Function(String creditCardName);
+typedef OnCreditCardCVVChanged = void Function(String creditCardCVV);
 
 class FuCreditCard extends StatefulWidget {
   final OnCreditCardNumberChanged onCreditCardNumberChanged;
