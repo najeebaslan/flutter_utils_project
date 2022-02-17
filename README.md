@@ -1,7 +1,5 @@
 # flutter_utils_project
 
-cc_avenue payment gateway non-seamless
-
 ## Getting Started
 
 This project is a starting point for a Flutter
