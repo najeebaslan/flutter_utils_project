@@ -1,4 +1,6 @@
-///
+/*File : FuCreditCard
+Version : 0.0.1
+*/
 
 /// [FuCreditCard] - customisable credit card with all the necessary details in it.
 

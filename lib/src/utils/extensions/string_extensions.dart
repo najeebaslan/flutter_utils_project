@@ -1,3 +1,7 @@
+/*File : StringExtension
+Version : 0.0.1
+*/
+
 import 'dart:convert';
 import 'package:flutter/services.dart';
 import 'package:flutter_utils_project/src/utils/validate/patterns.dart';

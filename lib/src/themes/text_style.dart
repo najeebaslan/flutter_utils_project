@@ -1,6 +1,6 @@
 /*
 * File : App Theme
-* Version : 1.0.0
+* Version : 0.0.1
 * */
 
 
@@ -10,6 +10,7 @@
 
 
 import 'package:flutter/widgets.dart';
+import 'package:flutter_utils_project/flutter_utils_project.dart';
 import 'app_theme.dart';
 
 enum ToolTextSize {
@@ -455,4 +456,124 @@ class FuTextStyle {
       _defaultLetterSpacing;
 
   static Map<int, FontWeight> get defaultFontWeight => _defaultFontWeight;
+  
+
+// Bold Text Style
+static TextStyle boldTextStyle({
+  int? size,
+  Color? color,
+  FontWeight? weight,
+  String? fontFamily,
+  double? letterSpacing,
+  FontStyle? fontStyle,
+  double? wordSpacing,
+  TextDecoration? decoration,
+  TextDecorationStyle? textDecorationStyle,
+  TextBaseline? textBaseline,
+  Color? decorationColor,
+  Color? backgroundColor,
+  double? height,
+}) {
+  return TextStyle(
+    fontSize: size != null ? size.toDouble() : textBoldSizeGlobal, //
+    color: color ?? textPrimaryColorGlobal, //
+    fontWeight: weight ?? fontWeightBoldGlobal, //
+    fontFamily: fontFamily ?? fontFamilyBoldGlobal, //
+    letterSpacing: letterSpacing,
+    fontStyle: fontStyle,
+    decoration: decoration,
+    decorationStyle: textDecorationStyle,
+    decorationColor: decorationColor,
+    wordSpacing: wordSpacing,
+    textBaseline: textBaseline,
+    backgroundColor: backgroundColor,
+    height: height,
+    overflow: TextOverflow.ellipsis,
+  );
+}
+
+// Primary Text Style
+static TextStyle primaryTextStyle({
+  int? size,
+  Color? color,
+  FontWeight? weight,
+  String? fontFamily,
+  double? letterSpacing,
+  FontStyle? fontStyle,
+  double? wordSpacing,
+  TextDecoration? decoration,
+  TextDecorationStyle? textDecorationStyle,
+  TextBaseline? textBaseline,
+  Color? decorationColor,
+  Color? backgroundColor,
+  double? height,
+}) {
+  return TextStyle(
+    fontSize: size != null ? size.toDouble() : textPrimarySizeGlobal,
+    color: color ?? textPrimaryColorGlobal,
+    fontWeight: weight ?? fontWeightPrimaryGlobal,
+    fontFamily: fontFamily ?? fontFamilyPrimaryGlobal,
+    letterSpacing: letterSpacing,
+    fontStyle: fontStyle,
+    decoration: decoration,
+    decorationStyle: textDecorationStyle,
+    decorationColor: decorationColor,
+    wordSpacing: wordSpacing,
+    textBaseline: textBaseline,
+    backgroundColor: backgroundColor,
+    height: height,
+  );
+}
+
+// Secondary Text Style
+static TextStyle secondaryTextStyle({
+  int? size,
+  Color? color,
+  FontWeight? weight,
+  String? fontFamily,
+  double? letterSpacing,
+  FontStyle? fontStyle,
+  double? wordSpacing,
+  TextDecoration? decoration,
+  TextDecorationStyle? textDecorationStyle,
+  TextBaseline? textBaseline,
+  Color? decorationColor,
+  Color? backgroundColor,
+  double? height,
+}) {
+  return TextStyle(
+    fontSize: size != null ? size.toDouble() : textSecondarySizeGlobal,
+    color: color ?? textSecondaryColorGlobal,
+    fontWeight: weight ?? fontWeightSecondaryGlobal,
+    fontFamily: fontFamily ?? fontFamilySecondaryGlobal,
+    letterSpacing: letterSpacing,
+    fontStyle: fontStyle,
+    decoration: decoration,
+    decorationStyle: textDecorationStyle,
+    decorationColor: decorationColor,
+    wordSpacing: wordSpacing,
+    textBaseline: textBaseline,
+    backgroundColor: backgroundColor,
+    height: height,
+  );
+}
+
+// Create Rich Text
+static RichText createRichText({
+  required List<TextSpan> list,
+  TextOverflow overflow = TextOverflow.clip,
+  int? maxLines,
+  TextAlign textAlign = TextAlign.left,
+  TextDirection? textDirection,
+  StrutStyle? strutStyle,
+}) {
+  return RichText(
+    text: TextSpan(children: list),
+    overflow: overflow,
+    maxLines: maxLines,
+    textAlign: textAlign,
+    textDirection: textDirection,
+    strutStyle: strutStyle,
+  );
+}
 }

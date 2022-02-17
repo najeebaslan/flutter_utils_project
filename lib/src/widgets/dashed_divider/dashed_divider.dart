@@ -1,4 +1,7 @@
 
+/*File : FuDashedDivider
+Version : 0.0.1
+*/
 
 /// [FuDashedDivider] - Provides a dashed line to the screen for the given width and height.
 

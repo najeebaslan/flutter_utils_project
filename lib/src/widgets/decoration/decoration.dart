@@ -1,6 +1,10 @@
+/*File : decoration
+Version : 0.0.1
+*/
+
 import 'package:flutter/material.dart';
-import 'package:flutter_utils_project/src/widgets/text_style/text_style.dart';
-import 'package:flutter_utils_project/src/utils/nb_utilse.dart';
+import 'package:flutter_utils_project/flutter_utils_project.dart';
+
 
 /// returns default InputDecoration for AppTextField widget
 InputDecoration defaultInputDecoration(
@@ -8,8 +12,8 @@ InputDecoration defaultInputDecoration(
   return InputDecoration(
     labelText: label,
     hintText: hint,
-    hintStyle: textStyle ?? primaryTextStyle(),
-    labelStyle: textStyle ?? secondaryTextStyle(),
+    hintStyle: textStyle ??FuTextStyle. primaryTextStyle(),
+    labelStyle: textStyle ?? FuTextStyle.secondaryTextStyle(),
     border: const OutlineInputBorder(),
     alignLabelWithHint: true,
   );

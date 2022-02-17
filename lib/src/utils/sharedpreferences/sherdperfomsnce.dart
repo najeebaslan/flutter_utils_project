@@ -1,6 +1,10 @@
-//version 1.0.0
-import 'package:shared_preferences/shared_preferences.dart';
+/*File : FuSharedPreferences
+Version : 0.0.1
+*/
+
 ///[FuSharedPreferences]  There are mainly 8 types of FuSharedPreferences, [getString,setString,setInt,getInt,setBool,getBool,deleteString,clereAllData]
+
+import 'package:shared_preferences/shared_preferences.dart';
 class FuSharedPreferences {
   //this is for get string from Preferences
   static getString( String key,) async {

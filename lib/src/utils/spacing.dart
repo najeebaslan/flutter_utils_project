@@ -1,5 +1,7 @@
 
-
+/*File : FuSpacing
+Version : 0.0.1
+*/
 /// [FuSpacing] - provides spacing of various types.
 
 import 'package:flutter/widgets.dart';

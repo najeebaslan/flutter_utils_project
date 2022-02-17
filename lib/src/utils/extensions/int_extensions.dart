@@ -1,3 +1,7 @@
+/*File : IntExtensions
+Version : 0.0.1
+*/
+
 import 'package:flutter/widgets.dart';
 import 'package:flutter_utils_project/src/widgets/decoration/decoration.dart';
 extension IntExtensions on int? {

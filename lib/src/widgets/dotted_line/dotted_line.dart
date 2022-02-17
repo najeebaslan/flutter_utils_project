@@ -1,4 +1,6 @@
-
+/*File : FxDottedLineCorner
+Version : 0.0.1
+*/
 /// [FxDottedLine] - gives a dotted line.
 //this is do same divaider but this is doing on all round widget 
 

@@ -1,3 +1,6 @@
+/*File : FuCard
+Version : 0.0.1
+*/
 /// There are mainly 2 types of card .
 ///
 /// [FuCard.bordered] - provides border to the card.

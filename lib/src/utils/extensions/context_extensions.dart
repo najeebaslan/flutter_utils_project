@@ -1,9 +1,11 @@
+/*File : ContextExtensions
+Version : 0.0.1
+*/
+
 import 'package:flutter/material.dart';
 import 'package:get/get_utils/src/platform/platform.dart';
 
-// import 'package:tool/widgets/decoration.dart';
-
-extension ContextExtensionss on BuildContext {
+extension ContextExtensions on BuildContext {
   /// The same of [MediaQuery.of(context).size]
   Size get mediaQuerySize => MediaQuery.of(this).size;
 

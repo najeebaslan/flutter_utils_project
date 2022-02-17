@@ -1,4 +1,11 @@
+
+
 library flutter_utils_project;
+/*File : flutter_utils_project
+Version : 0.0.1
+*/
+
+
 
 //core
 export 'src/core/logs/log.dart';
@@ -37,9 +44,8 @@ export 'src/widgets/dashed_divider/dashed_divider.dart';
 export 'src/widgets/decoration/decoration.dart';
 export 'src/widgets/dotted_line/dotted_line.dart';
 export 'src/widgets/text/text.dart';
-export 'src/widgets/text_liquid_fill/text_liquid_fill.dart';
 export 'src/widgets/text_field/text_field.dart';
-export 'src/widgets/text_style/text_style.dart';
+
 
 
 import 'src/core/logs/log.dart';

@@ -1,4 +1,6 @@
-
+/*File : AutoSizeText
+Version : 0.0.1
+*/
 import 'dart:async';
 import 'package:flutter/widgets.dart';
 
