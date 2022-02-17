@@ -53,7 +53,7 @@ class FuSharedPreferences {
 
   
   //this is for get string from Preferences
-  static clereAllData(String key,) async {
+  static clearAllData(String key,) async {
     SharedPreferences preference = await SharedPreferences.getInstance();
     var result = preference.clear();
     return result;
