@@ -1,8 +1,7 @@
 name: flutter_utils_project
 description: This library works to provide the tools and parts needed to build your project faster, with less effort, and add code.
 version: 0.0.1
-homepage:
-
+homepage: https://github.com/najeebaslan/flutter_utils_project.git
 environment:
   sdk: ">=2.15.1 <3.0.0"
   flutter: ">=1.17.0"
