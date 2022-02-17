@@ -67,13 +67,9 @@ Future<void> main() async {
 runApp(
   MultiProvider(
       providers: [
-
-        ChangeNotifierProvider<FuAppThemeNotifier>(
-          create: (_) => FuAppThemeNotifier(),
-        ),
-
-      ],
-      child: const MyApp()
+     ChangeNotifierProvider<FuAppThemeNotifier>( 
+     create: (_) => FuAppThemeNotifier(),), ],
+     child: const MyApp()
  ) );
 }
 
@@ -84,15 +80,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Consumer<FuAppThemeNotifier>(
         builder: (BuildContext context, FuAppThemeNotifier value, Widget? child) {
-      return
-
-         MaterialApp(
-              debugShowCheckedModeBanner: false,
-              title: "Flutter Utils Project",
-              theme:
-              FuAppTheme.getThemeFromThemeMode(),
-              home: const HomeScreen()//navigator to your HomeScreen
-              );
+      return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: "Flutter Utils Project",
+      theme: FuAppTheme.getThemeFromThemeMode(),
+      home: const HomeScreen()//navigator to your HomeScreen
+      );
     });
   }
 }
@@ -136,11 +129,7 @@ and the a lot Extensions
   color: context.textTheme.bodyText2!.color,//can yuo get found Context Extensions theme
   height: context.height / 2,//can yuo get found Context Extensions height (mediaQuerySize height)
   width: context.width / 1.5,
-  child: const Center(
-    child: Text(
-      'wellCome',
-      style: TextStyle(color: Colors.white),
-    ),
+  child: const Center( child: Text( 'wellCome', style: TextStyle(color: Colors.white), ),
   ),
 ),
 
@@ -379,7 +368,7 @@ onPressed: () {
   String data = 'welcome';
   print(data.capitalizeFirstLetter());
 },
-child: const Text('welcome'))
+child: const Text('capitalizeFirstLetter'))
 ```
 and find a lot  `String extension`
 
@@ -388,7 +377,7 @@ and find a lot  `String extension`
 ```dart
 const Text('welcome'),
 FuSpacing.height(30),
-const Text('welcome1')
+const Text('FuSpacing')
 ```
 
 ## 10- WidgetExtension
