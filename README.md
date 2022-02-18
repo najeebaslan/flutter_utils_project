@@ -28,7 +28,7 @@ This library works to provide the tools and parts needed to build your project f
 - `TextFormField` (Type) => none - bordered - roundBordered - rounded.
 - `Text` => There are mainly 13 types of Text widgets.
 - `Patterns` for url - phone - image - audio - text - document - excel - ppt - apk - pdf - html.
-- `Log` 
+- `CustomLog` 
 - `countryCode`
 - `ErrorResponse`
 - `Decoration`
@@ -38,14 +38,14 @@ This library works to provide the tools and parts needed to build your project f
 #### set String
 
 ```dart
- await MySharedPreferences.setString('username', ' Enter Username');
+ await MySharedPreferences.setString('Enter Your Key', ' Enter Username');
 
 ```
 
 #### get String
 
 ```dart
- await MySharedPreferences.getString('username', ' Enter Username');
+ await MySharedPreferences.getString('Enter Your Key', ' Enter Username');
 
 ```
 
@@ -53,7 +53,7 @@ This library works to provide the tools and parts needed to build your project f
 
 ```dart
 
-await MySharedPreferences.deleteString('username');
+await MySharedPreferences.deleteString('Enter Your Key');
 
 ```
 
