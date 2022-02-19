@@ -1,6 +1,6 @@
 ## 1.0.0
 
- Activate package  Android and iOS	and Linux and Windows and macOS Web 
+ Activate package  Android - iOS - Linux - Windows  macOS and Web 
 
  #### update widget HomePage  
 
