@@ -104,14 +104,20 @@
       [FuTextFieldStyle.outlined] -  It gives outline to the textField.
       */
 
-      child: FuTextField(
-      // textFieldType: FuTextFieldType.email,
-      decoration: InputDecoration(
-      hintText: 'Email Address',
-      labelStyle: FuTextStyle.b1(color: Colors.grey[700]),
-      labelText: 'Email Address',
-      contentPadding: FuSpacing.all(16.0),),
-      alignLabelWithHint: true,),
+      child: Row(
+        children: [
+          Expanded(
+            child: FuTextField(
+            // textFieldType: FuTextFieldType.email,
+            decoration: InputDecoration(
+            hintText: 'Email Address',
+            labelStyle: FuTextStyle.b1(color: Colors.grey[700]),
+            labelText: 'Email Address',
+            contentPadding: FuSpacing.all(16.0),),
+            alignLabelWithHint: true,),
+          ),
+        ],
+      ),
       color: FuAppTheme.theme.backgroundColor,
       ),
 
