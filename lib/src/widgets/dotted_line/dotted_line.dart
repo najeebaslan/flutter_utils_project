@@ -1,5 +1,5 @@
 /*File : FxDottedLineCorner
-Version : 1.0.0
+Version : 1.1.0
 */
 /// [FxDottedLine] - gives a dotted line.
 //this is do same divider but this is doing on all round widget 

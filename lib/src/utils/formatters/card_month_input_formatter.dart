@@ -1,5 +1,5 @@
 /*File : FuCardMonthInputFormatter
-Version : 1.0.0
+Version : 1.1.0
 */
 /// [FuCardMonthInputFormatter] - formats the string as per the credit card expiry date format
 

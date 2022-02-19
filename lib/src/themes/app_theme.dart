@@ -1,12 +1,10 @@
 /*
       * File : App Theme
-      * Version : 1.0.0
+      * Version : 1.1.0
       * */
 
 /// [FuAppThemeType.dark] - Applies all the properties for dark theme
 /// [FuAppThemeType.light] - Applies all the properties for light theme
-
-import 'dart:developer';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -204,7 +202,6 @@ class FuAppTheme {
         colorScheme: const ColorScheme.dark(
           primary: Color(0xff3d63ff),
           onPrimary: Colors.white,
-
           secondary: Color(0xff495057),
           onSecondary: Colors.white,
           surface: Color(0xFF14161A),

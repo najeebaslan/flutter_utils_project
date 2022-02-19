@@ -1,5 +1,5 @@
 /*File : FuSharedPreferences
-Version : 1.0.0
+Version : 1.1.0
 */
 
 ///[FuSharedPreferences]  There are mainly 8 types of FuSharedPreferences, [getString,setString,setInt,getInt,setBool,getBool,deleteString,clereAllData]

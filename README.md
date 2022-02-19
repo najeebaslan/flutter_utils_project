@@ -9,7 +9,7 @@ Android and/or iOS.
 
 This library works to provide the tools and parts needed to build your project faster.
 
-## As of now this package supports  Android - iOs - macOs - Linux - Windows and Web
+# Activate package  Android - iOS - Linux - Windows  macOS and Web 
 
 ## In this library you can find:
 

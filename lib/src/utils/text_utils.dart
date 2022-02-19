@@ -1,5 +1,5 @@
 /*File : FxTextUtils
-Version : 1.0.0
+Version : 1.1.0
 */
 
 /// [FxTextUtils] - provides different functions for paring, generating and formatting a string.

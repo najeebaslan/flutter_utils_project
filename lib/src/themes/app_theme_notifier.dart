@@ -1,11 +1,9 @@
 /*
 * File : App Theme Notifier (Listener)
-* Version : 1.0.0
+* Version : 1.1.0
 * */
 
 /// [FuAppThemeNotifier] - notifies the app by giving the theme to the app
-
-import 'dart:developer';
 
 import 'package:flutter/widgets.dart';
 import 'custom_theme.dart';

@@ -1,6 +1,6 @@
 /*
 * File : FuShadow
-* Version : 1.0.0
+* Version : 1.1.0
 * */
 
 /// [FuShadow] - provides custom shadow to the widget
