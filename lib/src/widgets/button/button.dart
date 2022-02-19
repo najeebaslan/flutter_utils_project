@@ -1,5 +1,5 @@
 /*File : FuButton
-Version : 1.1.0
+Version : 1.1.1
 */
 
 /// Three types of button implemented from Material Button.

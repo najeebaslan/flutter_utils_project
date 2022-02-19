@@ -1,5 +1,5 @@
 /*File : IntExtensions
-Version : 1.1.0
+Version : 1.1.1
 */
 
 import 'package:flutter/widgets.dart';

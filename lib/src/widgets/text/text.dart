@@ -1,5 +1,5 @@
 /*File : FuText
-Version : 1.1.0
+Version : 1.1.1
 */
 
 /// There are mainly 13 types of Text widgets.

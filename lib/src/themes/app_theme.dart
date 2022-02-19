@@ -1,6 +1,6 @@
 /*
       * File : App Theme
-      * Version : 1.1.0
+      * Version : 1.1.1
       * */
 
 /// [FuAppThemeType.dark] - Applies all the properties for dark theme

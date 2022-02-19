@@ -1,5 +1,5 @@
 /*File : ApiErrorHandler
-Version : 1.1.0
+Version : 1.1.1
 */
 import 'dart:io';
 import 'package:flutter/material.dart';

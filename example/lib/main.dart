@@ -188,7 +188,7 @@
       backgroundColor: FuAppTheme.isDarkMode
       ? FuAppTheme.theme.backgroundColor.withOpacity(1)
       : FuAppTheme.theme.primaryColor,
-      onPressed: () async => await FuSharedPreferences.clearAllData('Your Key'),
+      onPressed: () async => await FuSharedPreferences.clear('Your Key'),
       child: FuText('clear',
       color: FuAppTheme.theme.textTheme.overline?.color,
       )).paddingOnly(left: 3),

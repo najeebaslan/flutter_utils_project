@@ -1,6 +1,6 @@
 /*
 * File : FuLog
-* Version : 1.1.0
+* Version : 1.1.1
 * */
 
 /// [FuLog] - provides a way to print anything in the console-

@@ -1,5 +1,5 @@
 /*File : FuCardNumberInputFormatter
-Version : 1.1.0
+Version : 1.1.1
 */
 /// [FuCardNumberInputFormatter] - formats the given string as per the credit card number format.
 

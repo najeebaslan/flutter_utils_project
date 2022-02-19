@@ -1,5 +1,5 @@
 /*File : FuSharedPreferences
-Version : 1.1.0
+Version : 1.1.1
 */
 
 ///[FuSharedPreferences]  There are mainly 8 types of FuSharedPreferences, [getString,setString,setInt,getInt,setBool,getBool,deleteString,clereAllData]
@@ -8,9 +8,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 class FuSharedPreferences {
   //this is for get string from Preferences
-  static getString(
-    String key,
-  ) async {
+  static getString(String key,) async {
     SharedPreferences preference = await SharedPreferences.getInstance();
     var result = preference.getString(key);
     return result;
@@ -31,13 +29,9 @@ class FuSharedPreferences {
   }
 
   //this is for get int from Preferences
-  static getInt(
-    String key,
-  ) async {
+  static getInt(String key, ) async {
     SharedPreferences preference = await SharedPreferences.getInstance();
-    var result = preference.getInt(
-      key,
-    );
+    var result = preference.getInt( key, );
     return result;
   }
 
@@ -49,27 +43,21 @@ class FuSharedPreferences {
   }
 
   //this is for get bool from Preferences
-  static getBool(
-    String key,
-  ) async {
+  static getBool( String key,) async {
     SharedPreferences preference = await SharedPreferences.getInstance();
     var result = preference.getBool(key);
     return result;
   }
 
   //this is for get string from Preferences
-  static deleteString(
-    String key,
-  ) async {
+  static deleteString( String key,) async {
     SharedPreferences preference = await SharedPreferences.getInstance();
     var result = preference.remove(key);
     return result;
   }
 
   //this is for get string from Preferences
-  static clearAllData(
-    String key,
-  ) async {
+  static clear( String key,) async {
     SharedPreferences preference = await SharedPreferences.getInstance();
     var result = preference.clear();
     return result;

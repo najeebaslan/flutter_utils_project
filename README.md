@@ -38,26 +38,34 @@ This library works to provide the tools and parts needed to build your project f
 #### set String
 
 ```dart
- await MySharedPreferences.setString('Enter Your Key', ' Enter Username');
+ await FuSharedPreferences.setString('Enter Your Key', ' Enter Username');
 
 ```
 
 #### get String
 
 ```dart
- await MySharedPreferences.getString('Enter Your Key', ' Enter Username');
+ await FuSharedPreferences.getString('Enter Your Key',);
 
 ```
 
-#### get delete
+#### delete
 
 ```dart
 
-await MySharedPreferences.deleteString('Enter Your Key');
+await FuSharedPreferences.deleteString('Enter Your Key');
 
 ```
 
-You can also do a lot of operations with SharedPreferences
+#### clear
+
+```dart
+
+await FuSharedPreferences.clear();
+
+```
+ 
+You can also do a lot of operations with SharedPreferences[`sitInt`-`getInt`-`sitBool`-`getBool`]
 
 ## 2- Use the AppTheme
 

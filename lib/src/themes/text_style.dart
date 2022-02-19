@@ -1,6 +1,6 @@
 /*
 * File : App Theme
-* Version : 1.1.0
+* Version : 1.1.1
 * */
 
 /// [FuTextStyle] - gives 13 different type of styles to the text on the basis of size

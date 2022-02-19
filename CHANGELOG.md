@@ -1,5 +1,7 @@
-## 1.1.0
+## 1.1.1
 
- # Activate package  Android - iOS - Linux - Windows  macOS and Web 
+ # initial release
+
+
 
 

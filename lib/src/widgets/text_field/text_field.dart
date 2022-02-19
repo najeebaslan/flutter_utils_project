@@ -1,5 +1,5 @@
 /*File : FuTextField
-Version : 1.1.0
+Version : 1.1.1
 */
 
 ///There are mainly 2 styles of TextField.

@@ -1,6 +1,6 @@
 library flutter_utils_project;
 /*File : flutter_utils_project
-Version : 1.1.0
+Version : 1.1.1
 */
 
 //core

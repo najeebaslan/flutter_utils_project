@@ -1,6 +1,6 @@
 /*
 * File : App Theme
-* Version : 1.1.0
+* Version : 1.1.1
 * */
 
 /// [FuCustomTheme] - provides the different properties for the custom theme.

@@ -1,5 +1,5 @@
 /*File : FuSpacing
-Version : 1.1.0
+Version : 1.1.1
 */
 /// [FuSpacing] - provides spacing of various types.
 
