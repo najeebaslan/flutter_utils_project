@@ -79,192 +79,194 @@
       backgroundColor: themeData.appBarTheme.backgroundColor,
       ),
       body:
-       Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-
-      /* 
-      Example Spacing any Widget, and There are also many features
-      same[  FuSpacing.only ,all , zero,bottom ,fromLTRB ,horizontal,left , .....and a lot]
-      */
-
-      children: [
-      //  Text( int.parse('test').toString()),//it is do FlutterErrorDetails
-      Row(children: const[  FuText('Example TextField', )], ).paddingBottom(12),
-
-      FuContainer.none(
-      borderRadius: radius(),
-    
-      /* 
-      There are mainly 2 styles of TextField.
-      [FuTextFieldStyle.underlined] -  It gives underline to the textField.
-      [FuTextFieldStyle.outlined] -  It gives outline to the textField.
-      */
-
-      child: Row(
-      children: [
-     
+       SingleChildScrollView(
+         child: Column(
+             mainAxisAlignment: MainAxisAlignment.center,
        
-     Expanded(child:  FuTextField(
-      // textFieldType: FuTextFieldType.email,
-      decoration: InputDecoration(
-      hintText: 'Email Address',
-      labelStyle: FuTextStyle.b1(color: Colors.grey[700]),
-      labelText: 'Email Address',
-      contentPadding: const EdgeInsets.all(16)),
-      alignLabelWithHint: true,),)
-        
-      
-      ],
-      ),
-      color: themeData.backgroundColor,
-      ),
-
-      15.height,//(height)=>int_extensions.
-
-      /* 
-      [FuSharedPreferences]  There are mainly 8 types of FuSharedPreferences,
-      [getString,setString,setInt,getInt,setBool,getBool,deleteString,clearAllData]
-      */
-      FuDashedDivider( color:FuAppTheme.getThemeFromThemeMode().colorScheme.onBackground, ),
-
-      15.height,
-
-      Row(children:const[  FuText( 'Example SharedPreferences', ) ],).paddingBottom(12),
-
-      FuContainer.none(
-      borderRadius: radius(),
-      child: Form(
-      key: _formKey,
-      child: TextFormField(
-      controller: _textController,
-      /* this is FuInputValidation  */
-      validator:(String ?value){
-     return FuInputValidation.validationTextField(
-      controller: _textController, 
-      error: '(Enter Your Error)', 
-      lengthMin: 'The field must be at least tow characters long.',
-      lengthMax: 'The field should not be more than eight letters long.',
-      main: 2,
-      max: 8);
-      } ,
-      decoration: InputDecoration(
-      contentPadding: FuSpacing.all(16.0),
-      labelText: "Example Text",
-      focusedBorder: themeData.inputDecorationTheme.focusedBorder,
-      prefixIcon: const Icon( Icons.text_fields, size: 24,),
-      ),), ),
-      color:themeData.backgroundColor,
-      ),
-
-      15.height,
-
-      SingleChildScrollView(
-      scrollDirection: Axis.horizontal,
-      child: Row(
-      children: [
-      FuButton.rounded(
-      backgroundColor: FuAppTheme.isDarkMode
-      ? themeData.backgroundColor.withOpacity(1)
-      :themeData.primaryColor,
-      onPressed:() {
-        if (_formKey.currentState!.validate()){
-        FuSharedPreferences.setString('Your Key', _textController.text);
-        } },
-
-      child: FuText('setString', color: themeData.textTheme.overline?.color,)
-      ).paddingAll(3),//(paddingAll)=>widget_extensions
-
-      FuButton.rounded(
-      backgroundColor: FuAppTheme.isDarkMode
-      ? themeData.backgroundColor.withOpacity(1)
-      : themeData.primaryColor,
-      onPressed: () async {
+             /* 
+             Example Spacing any Widget, and There are also many features
+             same[  FuSpacing.only ,all , zero,bottom ,fromLTRB ,horizontal,left , .....and a lot]
+             */
+       
+             children: [
+             //  Text( int.parse('test').toString()),//it is do FlutterErrorDetails
+             Row(children: const[  FuText('Example TextField', )], ).paddingBottom(12),
+       
+             FuContainer.none(
+             borderRadius: radius(),
+           
+             /* 
+             There are mainly 2 styles of TextField.
+             [FuTextFieldStyle.underlined] -  It gives underline to the textField.
+             [FuTextFieldStyle.outlined] -  It gives outline to the textField.
+             */
+       
+             child: Row(
+             children: [
+            
          
-      var getString = await FuSharedPreferences.getString( 'Your Key',);
-      FuLog(getString.toString());},
-      
-      child: FuText( 'getString',
-      color: themeData.textTheme.overline?.color,
-      )).paddingOnly(left: 3),
-
-      FuButton.rounded(
-      backgroundColor: FuAppTheme.isDarkMode
-      ? themeData.backgroundColor.withOpacity(1)
-      : themeData.primaryColor,
-      onPressed: () async => await FuSharedPreferences.deleteString( 'Your Key',),
-      child: FuText( 'delete key',
-      color: themeData.textTheme.overline?.color,
-      )).paddingOnly(left: 3),
-
-      FuButton.rounded(
-      backgroundColor: FuAppTheme.isDarkMode
-      ? themeData.backgroundColor.withOpacity(1)
-      : themeData.primaryColor,
-      onPressed: () async => await FuSharedPreferences.clear('Your Key'),
-      child: FuText('clear',
-      color: themeData.textTheme.overline?.color,
-      )).paddingOnly(left: 3),
-
-      ],
-      ),
-      ),
-      15.height,
-       FuDashedDivider(
-      color: themeData.colorScheme.onBackground,
-      ),
-
-      15.height,
-  Row(
-    children: [
-      const Text('Example replace From number English To Arabic'),
-      5.width,
-      Expanded(
-        child: Text(''. replaceFarsiNumber('123',),
-        style: TextStyle(color:themeData.primaryColor,fontSize: 20),
-        ),
-      ),
-    ],
-  ),
-   15.height,
-      FuDashedDivider(
-      color: themeData.colorScheme.onBackground,
-      ),
-
-      15.height,
-
-      Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: [
-      /*
-      Three types of button implemented from Material Button.
-      [FuButtonType.elevated] - gives elevation to the button along with some height and shadow.
-      [FuButtonType.outlined] - gives outline to the button
-      [FuButtonType.text] - able to build text button 
-      */
-      FuButton.rounded(
-      backgroundColor:
-      themeData.buttonTheme.colorScheme?.background,
-      onPressed: () => FuLog('print Example Button'),
-      child: FuText(
-      'Example Button',
-      color: FuAppTheme.customTheme.withe,
-      )),
-      /*
-      Example FuContainer it have a lot
-      properties [ FuContainer.bordered , FuContainer.none , FuContainer.roundBordered ,FuContainer.rounded] 
-      */
-      FuContainer.bordered(
-      color: themeData.buttonTheme.colorScheme?.background,
-      child: FuText(
-      'Example Container',
-      color: FuAppTheme.customTheme.withe,
-      )),
-      ],
-      ),
-
-      ],
-      
-      ).paddingAll(12)
+            Expanded(child:  FuTextField(
+             // textFieldType: FuTextFieldType.email,
+             decoration: InputDecoration(
+             hintText: 'Email Address',
+             labelStyle: FuTextStyle.b1(color: Colors.grey[700]),
+             labelText: 'Email Address',
+             contentPadding: const EdgeInsets.all(16)),
+             alignLabelWithHint: true,),)
+          
+             
+             ],
+             ),
+             color: themeData.backgroundColor,
+             ),
+       
+             15.height,//(height)=>int_extensions.
+       
+             /* 
+             [FuSharedPreferences]  There are mainly 8 types of FuSharedPreferences,
+             [getString,setString,setInt,getInt,setBool,getBool,deleteString,clearAllData]
+             */
+             FuDashedDivider( color:FuAppTheme.getThemeFromThemeMode().colorScheme.onBackground, ),
+       
+             15.height,
+       
+             Row(children:const[  FuText( 'Example SharedPreferences', ) ],).paddingBottom(12),
+       
+             FuContainer.none(
+             borderRadius: radius(),
+             child: Form(
+             key: _formKey,
+             child: TextFormField(
+             controller: _textController,
+             /* this is FuInputValidation  */
+             validator:(String ?value){
+            return FuInputValidation.validationTextField(
+             controller: _textController, 
+             error: '(Enter Your Error)', 
+             lengthMin: 'The field must be at least tow characters long.',
+             lengthMax: 'The field should not be more than eight letters long.',
+             main: 2,
+             max: 8);
+             } ,
+             decoration: InputDecoration(
+             contentPadding: FuSpacing.all(16.0),
+             labelText: "Example Text",
+             focusedBorder: themeData.inputDecorationTheme.focusedBorder,
+             prefixIcon: const Icon( Icons.text_fields, size: 24,),
+             ),), ),
+             color:themeData.backgroundColor,
+             ),
+       
+             15.height,
+       
+             SingleChildScrollView(
+             scrollDirection: Axis.horizontal,
+             child: Row(
+             children: [
+             FuButton.rounded(
+             backgroundColor: FuAppTheme.isDarkMode
+             ? themeData.backgroundColor.withOpacity(1)
+             :themeData.primaryColor,
+             onPressed:() {
+          if (_formKey.currentState!.validate()){
+          FuSharedPreferences.setString('Your Key', _textController.text);
+          } },
+       
+             child: FuText('setString', color: themeData.textTheme.overline?.color,)
+             ).paddingAll(3),//(paddingAll)=>widget_extensions
+       
+             FuButton.rounded(
+             backgroundColor: FuAppTheme.isDarkMode
+             ? themeData.backgroundColor.withOpacity(1)
+             : themeData.primaryColor,
+             onPressed: () async {
+           
+             var getString = await FuSharedPreferences.getString( 'Your Key',);
+             FuLog(getString.toString());},
+             
+             child: FuText( 'getString',
+             color: themeData.textTheme.overline?.color,
+             )).paddingOnly(left: 3),
+       
+             FuButton.rounded(
+             backgroundColor: FuAppTheme.isDarkMode
+             ? themeData.backgroundColor.withOpacity(1)
+             : themeData.primaryColor,
+             onPressed: () async => await FuSharedPreferences.deleteString( 'Your Key',),
+             child: FuText( 'delete key',
+             color: themeData.textTheme.overline?.color,
+             )).paddingOnly(left: 3),
+       
+             FuButton.rounded(
+             backgroundColor: FuAppTheme.isDarkMode
+             ? themeData.backgroundColor.withOpacity(1)
+             : themeData.primaryColor,
+             onPressed: () async => await FuSharedPreferences.clear('Your Key'),
+             child: FuText('clear',
+             color: themeData.textTheme.overline?.color,
+             )).paddingOnly(left: 3),
+       
+             ],
+             ),
+             ),
+             15.height,
+         FuDashedDivider(
+             color: themeData.colorScheme.onBackground,
+             ),
+       
+             15.height,
+         Row(
+           children: [
+             const Text('Example replace From number English To Arabic'),
+             5.width,
+             Expanded(
+          child: Text(''. replaceFarsiNumber('123',),
+          style: TextStyle(color:themeData.primaryColor,fontSize: 20),
+          ),
+             ),
+           ],
+         ),
+          15.height,
+             FuDashedDivider(
+             color: themeData.colorScheme.onBackground,
+             ),
+       
+             15.height,
+       
+             Row(
+             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+             children: [
+             /*
+             Three types of button implemented from Material Button.
+             [FuButtonType.elevated] - gives elevation to the button along with some height and shadow.
+             [FuButtonType.outlined] - gives outline to the button
+             [FuButtonType.text] - able to build text button 
+             */
+             FuButton.rounded(
+             backgroundColor:
+             themeData.buttonTheme.colorScheme?.background,
+             onPressed: () => FuLog('print Example Button'),
+             child: FuText(
+             'Example Button',
+             color: FuAppTheme.customTheme.withe,
+             )),
+             /*
+             Example FuContainer it have a lot
+             properties [ FuContainer.bordered , FuContainer.none , FuContainer.roundBordered ,FuContainer.rounded] 
+             */
+             FuContainer.bordered(
+             color: themeData.buttonTheme.colorScheme?.background,
+             child: FuText(
+             'Example Container',
+             color: FuAppTheme.customTheme.withe,
+             )),
+             ],
+             ),
+       
+             ],
+             
+             ).paddingAll(12),
+       )
       );
       }
       }

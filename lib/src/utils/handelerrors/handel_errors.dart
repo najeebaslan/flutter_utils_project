@@ -7,10 +7,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_utils_project/flutter_utils_project.dart';
 
 class ApiErrorHandler {
-  static parseError(
-    ex,
-    BuildContext context,
-  ) {
+  static parseError( ex, BuildContext context, ) {
     if (ex is SocketException) {
       FuErrorResponse.snackBarError(
       error: 'The server is not connected Make sure you are connected to the Internet 😑',
@@ -56,9 +53,9 @@ class ApiErrorHandler {
     return;
   }
 }
-
+  //it's OPP snackBar
 class FuErrorResponse {
-  //this OPP snackBar
+
   static snackBarError({required String error, required BuildContext context, required Color color}) {
     return ScaffoldMessenger.of(context)
       ..removeCurrentSnackBar()

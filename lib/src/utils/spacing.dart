@@ -25,7 +25,7 @@ class FuSpacing {
   static EdgeInsetsGeometry left(double spacing) {
     return FuSpacing.only(left: spacing);
   }
-
+/// it's do padding from all deration except Left
   static EdgeInsetsGeometry noLeft(double spacing) {
     return FuSpacing.only(top: spacing, bottom: spacing, right: spacing);
   }
@@ -33,7 +33,7 @@ class FuSpacing {
   static EdgeInsetsGeometry top(double spacing) {
     return FuSpacing.only(top: spacing);
   }
-
+/// it's do padding from all deration except Top
   static EdgeInsetsGeometry noTop(double spacing) {
     return FuSpacing.only(left: spacing, bottom: spacing, right: spacing);
   }
@@ -41,7 +41,7 @@ class FuSpacing {
   static EdgeInsetsGeometry right(double spacing) {
     return FuSpacing.only(right: spacing);
   }
-
+/// it's do padding from all deration except Right
   static EdgeInsetsGeometry noRight(double spacing) {
     return FuSpacing.only(top: spacing, bottom: spacing, left: spacing);
   }
@@ -49,7 +49,7 @@ class FuSpacing {
   static EdgeInsetsGeometry bottom(double spacing) {
     return FuSpacing.only(bottom: spacing);
   }
-
+/// it's do padding from all deration except Bottom
   static EdgeInsetsGeometry noBottom(double spacing) {
     return FuSpacing.only(top: spacing, left: spacing, right: spacing);
   }
