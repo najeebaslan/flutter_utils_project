@@ -63,15 +63,15 @@ FlutterUtilsProject.init();}
   loadingWidget: const CircularProgressIndicator().center(),
   ///useConnectionStateForLoader: ,
   ///initialData: ,this is initial Data
-  onSuccess: (List<YOURMODEL> myData) {
+  onSuccess: (List<YOURMODEL> snap) {
   return ListView.builder(
-  itemCount: myData.length,
+  itemCount: snap.length,
   physics: const BouncingScrollPhysics(
   parent: AlwaysScrollableScrollPhysics()),
   itemBuilder: (BuildContext context, int index) {
-  var data = myData[index];
+  var data = snap[index];
 
-  return Text(data);
+  return Text(data.name);
 
   },
   );
@@ -320,10 +320,6 @@ if(response.statusCode=isSuccessful){
 
 ```
 
-### `borderRadius`
-
-
-
 ### `microseconds`
 
 Returns microseconds duration
@@ -565,10 +561,10 @@ style: TextStyle(color: context.theme.primaryColor,fontSize: 20),
 ```
 ## 11- Widget Extensions
 ```dart
-  //Padding Widget form Height 
+  //Padding piece from the height 
   Text('withHeight').withHeight(20),
 
-  //Padding Widget form Width Height  
+  //Padding piece from the width and height 
   Text('widthAndHeight').widthAndHeight(height: 12, width: 11),
 
   //hide Widget if value equal false else equal true visible widget
@@ -578,27 +574,26 @@ style: TextStyle(color: context.theme.primaryColor,fontSize: 20),
   Text('withTooltip').withTooltip(msg: 'Text'),
   
   //you can onTap for any widget
-  ❌ ElevatedButton(onPressed: (){/*  do anything */} ,child: Text('data')),
+  ❌ InkWell( onTap: (){/*  do anything */},  child: Text('onTap'),)
   ✅ Text('onTap').onTap((){/*  do anything */}),
 
-  //Padding Widget form Width All 
+  //Padding piece from all directions
   ❌ Padding(padding: EdgeInsets.all(12),child: Text('paddingAll'),),
   ✅ Text('paddingAll').paddingAll(12),
 
-  //Padding Widget form Width Bottom 
+  //Padding piece from the bottom
   Text('paddingBottom').paddingBottom(12),
 
-  //Padding Widget form Width Left 
+  //Padding piece from the left 
   Text('paddingLeft').paddingLeft(12),
 
-  //Padding Widget form Width Right 
+  //Padding piece from the right 
   Text('paddingRight').paddingRight(12),
 
-  //Padding Widget form Width Only 
+  //Padding Widget form custom directions
   Text('paddingOnly').paddingOnly(bottom: 30,top: 50,left: 0,right: 12), 
 
-  //you can expand for widget
-  Row(children:[ TextField().expand()]),
+ 
  //you can expand for any widget
 ❌ Row(children: [Expanded(child: TextField())],),
 ✅ Row(children: [TextField()],).expand(),
@@ -612,7 +607,7 @@ style: TextStyle(color: context.theme.primaryColor,fontSize: 20),
   //you can flexible for widget
   Text('flexible').flexible(),
 
-  //Padding Widget form Width Only 
+  //Padding Widget form custom directions  
   Text('paddingSymmetric').paddingSymmetric(),
 
   //this is same SizedBox()
@@ -625,6 +620,7 @@ style: TextStyle(color: context.theme.primaryColor,fontSize: 20),
  CircleButton(
   icon: const Icon(Icons.search),
   iconSize: 30.0,
+  color:Colors.black,
   onPressed: () => print('Search'),
   ),
 
@@ -659,7 +655,7 @@ get all name and code all country
 ```dart
 
 ❌ SharedPreferences preference = await SharedPreferences.getInstance();
-❌ var result = preference.setString(key, value);
+❌ var result = preference.setString('key', 'value');
 
 
  ✅ await FuSharedPreferences.setString('key', 'value');
@@ -671,7 +667,7 @@ get all name and code all country
 ```dart
 
 ❌ SharedPreferences preference = await SharedPreferences.getInstance();
-❌ var result = preference.getString(key,);
+❌ var result = preference.getString('key');
 
 
  ✅ await FuSharedPreferences.getString('key');
@@ -682,7 +678,7 @@ get all name and code all country
 
 ```dart
 
-await FuSharedPreferences.deleteString('Enter Your Key');
+await FuSharedPreferences.deleteString('key');
 
 ```
 

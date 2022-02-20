@@ -5,8 +5,8 @@
 
 /// [FuCustomTheme] - provides the different properties for the custom theme.
 
-
 import 'package:flutter/widgets.dart';
+
 enum FuCustomThemeType { light, dark }
 
 class FuCustomTheme {
@@ -36,6 +36,7 @@ class FuCustomTheme {
       pink,
       brown,
       withe,
+      blackToWithe,
       blueToWithe;
 
   FuCustomTheme({
@@ -67,6 +68,7 @@ class FuCustomTheme {
     this.brown = const Color(0xffA52A2A),
     this.withe = const Color(0xffeeeeee),
     this.blueToWithe = const Color(0xff0000ff),
+    this.blackToWithe = const Color(0xFF1C1C22),
   });
 
   static FuCustomTheme lightCustomAppTheme = FuCustomTheme(
@@ -103,6 +105,7 @@ class FuCustomTheme {
       onWarning: const Color(0xffffffff),
       colorError: const Color(0xfff0323c),
       blueToWithe: const Color(0xffffffff),
+      blackToWithe: const Color(0xffffffff),
       onError: const Color(0xffffffff));
 
   static FuCustomThemeType defaultThemeType = FuCustomThemeType.light;
