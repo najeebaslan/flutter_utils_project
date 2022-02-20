@@ -11,6 +11,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'app_theme.dart';
 
 class FuAppThemeNotifier extends ChangeNotifier {
+  
   FuAppThemeNotifier() {
     init();
   }
@@ -25,6 +26,7 @@ class FuAppThemeNotifier extends ChangeNotifier {
   }
 
   changeAppThemeMode(FuAppThemeType? themeType) async {
+
     FuAppTheme.defaultThemeType = themeType!;
     if (themeType.index == 1) {
       FuCustomTheme.defaultThemeType =

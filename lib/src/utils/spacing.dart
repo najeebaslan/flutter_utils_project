@@ -26,7 +26,7 @@ class FuSpacing {
     return FuSpacing.only(left: spacing);
   }
 
-  static EdgeInsetsGeometry nLeft(double spacing) {
+  static EdgeInsetsGeometry noLeft(double spacing) {
     return FuSpacing.only(top: spacing, bottom: spacing, right: spacing);
   }
 
@@ -34,7 +34,7 @@ class FuSpacing {
     return FuSpacing.only(top: spacing);
   }
 
-  static EdgeInsetsGeometry nTop(double spacing) {
+  static EdgeInsetsGeometry noTop(double spacing) {
     return FuSpacing.only(left: spacing, bottom: spacing, right: spacing);
   }
 
@@ -42,7 +42,7 @@ class FuSpacing {
     return FuSpacing.only(right: spacing);
   }
 
-  static EdgeInsetsGeometry nRight(double spacing) {
+  static EdgeInsetsGeometry noRight(double spacing) {
     return FuSpacing.only(top: spacing, bottom: spacing, left: spacing);
   }
 
@@ -50,7 +50,7 @@ class FuSpacing {
     return FuSpacing.only(bottom: spacing);
   }
 
-  static EdgeInsetsGeometry nBottom(double spacing) {
+  static EdgeInsetsGeometry noBottom(double spacing) {
     return FuSpacing.only(top: spacing, left: spacing, right: spacing);
   }
 

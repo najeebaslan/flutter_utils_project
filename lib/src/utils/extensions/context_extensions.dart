@@ -2,7 +2,9 @@
 Version : 1.1.1
 */
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import '/src/utils/costume_transitions/costume_transition.dart';
 import 'package:get/get_utils/src/platform/platform.dart';
 
 extension ContextExtensions on BuildContext {
@@ -46,6 +48,38 @@ extension ContextExtensions on BuildContext {
   double widthTransformer({double dividedBy = 1, double reducedBy = 0.0}) {
     return (mediaQuerySize.width - ((mediaQuerySize.width / 100) * reducedBy)) /
         dividedBy;
+  }
+
+
+
+
+  /// Push the given route onto the navigator.
+  ///
+  Future<T?> push<T>(
+    Widget screen, {
+    bool transparent = false,
+    bool isCupertino = false,
+  }) {
+    final RouteSettings settings = RouteSettings(
+      name: screen.toString(),
+    );
+    if (transparent) {
+      return Navigator.of(this).push<T>(TransparentRoute<T>(
+        builder: (_) => screen,
+        settings: settings,
+      ));
+    } else {
+      if (isCupertino) {
+        return Navigator.of(this).push<T>(CupertinoPageRoute<T>(
+          builder: (_) => screen,
+          settings: settings,
+        ));
+      }
+      return Navigator.of(this).push<T>(MaterialPageRoute<T>(
+        builder: (_) => screen,
+        settings: settings,
+      ));
+    }
   }
 
   /// Divide the height proportionally by the given value

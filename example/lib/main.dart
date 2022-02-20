@@ -1,12 +1,16 @@
 
+    
       import 'package:provider/provider.dart';
       import 'package:flutter/material.dart';
       import 'package:flutter_utils_project/flutter_utils_project.dart';
 
       Future<void> main() async {
+        ///this is page Flutter Error Details
+        ///if you want test this widget enter it inside body <<Text( int.parse('text').toString()),>>
+      FlutterErrorPage.flutterErrorDetails();
       //You will need to initialize AppThemeNotifier class for theme changes.
       WidgetsFlutterBinding.ensureInitialized();
-      FuAppThemeNotifier().init();
+      FlutterUtilsProject.init();
       runApp(MultiProvider(providers: [
       ChangeNotifierProvider<FuAppThemeNotifier>(
       create: (_) => FuAppThemeNotifier(),
@@ -39,9 +43,6 @@
       }
 
       class _MyCustomWidgetState extends State<HomePage> {
-      bool isExpanded = false;
-      bool isExpanded1 = false;
-
       void _handleRadioValueChange(FuAppThemeType? value) {
       Provider.of<FuAppThemeNotifier>(context, listen: false) .changeAppThemeMode(value);
       }
@@ -50,18 +51,20 @@
 
       final _formKey = GlobalKey<FormState>();
       late ThemeData themeData;
+     
       @override
       Widget build(BuildContext context) {
       themeData = Theme.of(context);//this is for initialize ThemeData
       return Scaffold(
-      backgroundColor: FuAppTheme.theme.scaffoldBackgroundColor, //this  is Example FuAppTheme
+      backgroundColor: themeData.scaffoldBackgroundColor, //this  is Example FuAppTheme
       appBar: AppBar(
       actions: [
+    
       Row(
       children: <Widget>[
       FuText(FuAppTheme.isDarkMode ? "Dark Theme" : "Light Theme",
-      textStyle: FuAppTheme.theme.textTheme.subtitle2),
-      IconButton(
+      textStyle: themeData.textTheme.subtitle2),
+      CircleButton(
       onPressed: () {
       //Example Change App ThemeMode
       FuAppTheme.isDarkMode
@@ -70,12 +73,12 @@
       },
       icon: Icon(
       FuAppTheme.isDarkMode ? Icons.dark_mode : Icons.light_mode,
-      color: FuAppTheme.theme.primaryColor,
-      )),
+      color: themeData.primaryColor,
+      ), iconSize: 30,),
       ],
       ).paddingOnly(left: 16, right: 16),
       ],
-      backgroundColor: FuAppTheme.theme.appBarTheme.backgroundColor,
+      backgroundColor: themeData.appBarTheme.backgroundColor,
       ),
       body: SingleChildScrollView(
       child: Column(
@@ -87,17 +90,12 @@
       */
 
       children: [
+      //  Text( int.parse('test').toString()),//it is do FlutterErrorDetails
       Row(children: const[  FuText('Example TextField', )], ).paddingBottom(12),
-      FxDottedLine(child: const Text('FxDottedLine'),
-      color: context.theme.primaryColor,
-      dottedLength: 12,strokeWidth: 6,
-      width: 100,
-      height: 100,
-      space: 1,
-      ),
+
       FuContainer.none(
       borderRadius: radius(),
-
+    
       /* 
       There are mainly 2 styles of TextField.
       [FuTextFieldStyle.underlined] -  It gives underline to the textField.
@@ -105,20 +103,20 @@
       */
 
       child: Row(
-        children: [
-          Expanded(
-            child: FuTextField(
-            // textFieldType: FuTextFieldType.email,
-            decoration: InputDecoration(
-            hintText: 'Email Address',
-            labelStyle: FuTextStyle.b1(color: Colors.grey[700]),
-            labelText: 'Email Address',
-            contentPadding: FuSpacing.all(16.0),),
-            alignLabelWithHint: true,),
-          ),
-        ],
+      children: [
+     
+       FuTextField(
+      // textFieldType: FuTextFieldType.email,
+      decoration: InputDecoration(
+      hintText: 'Email Address',
+      labelStyle: FuTextStyle.b1(color: Colors.grey[700]),
+      labelText: 'Email Address',
+      contentPadding: FuSpacing.all(16.0),),
+      alignLabelWithHint: true,).expand(),
+      
+      ],
       ),
-      color: FuAppTheme.theme.backgroundColor,
+      color: themeData.backgroundColor,
       ),
 
       15.height,//(height)=>int_extensions.
@@ -139,13 +137,23 @@
       key: _formKey,
       child: TextFormField(
       controller: _textController,
+      /* this is FuInputValidation  */
+      validator:(String ?value){
+     return FuInputValidation.validationTextField(
+      controller: _textController, 
+      error: '(Enter Your Error)', 
+      lengthMin: 'The field must be at least tow characters long.',
+      lengthMax: 'The field should not be more than eight letters long.',
+      main: 2,
+      max: 8);
+      } ,
       decoration: InputDecoration(
       contentPadding: FuSpacing.all(16.0),
       labelText: "Example Text",
-      focusedBorder: FuAppTheme.theme.inputDecorationTheme.focusedBorder,
+      focusedBorder: themeData.inputDecorationTheme.focusedBorder,
       prefixIcon: const Icon( Icons.text_fields, size: 24,),
       ),), ),
-      color: FuAppTheme.theme.backgroundColor,
+      color:themeData.backgroundColor,
       ),
 
       15.height,
@@ -156,50 +164,70 @@
       children: [
       FuButton.rounded(
       backgroundColor: FuAppTheme.isDarkMode
-      ? FuAppTheme.theme.backgroundColor.withOpacity(1)
-      : FuAppTheme.theme.primaryColor,
-      onPressed:() =>FuSharedPreferences.setString('Your Key', _textController.text),
+      ? themeData.backgroundColor.withOpacity(1)
+      :themeData.primaryColor,
+      onPressed:() {
+        if (_formKey.currentState!.validate()){
+        FuSharedPreferences.setString('Your Key', _textController.text);
+        } },
 
-      child: FuText('setString', color: FuAppTheme.theme.textTheme.overline?.color,)
+      child: FuText('setString', color: themeData.textTheme.overline?.color,)
       ).paddingAll(3),//(paddingAll)=>widget_extensions
 
       FuButton.rounded(
       backgroundColor: FuAppTheme.isDarkMode
-      ? FuAppTheme.theme.backgroundColor.withOpacity(1)
-      : FuAppTheme.theme.primaryColor,
+      ? themeData.backgroundColor.withOpacity(1)
+      : themeData.primaryColor,
       onPressed: () async {
+         
       var getString = await FuSharedPreferences.getString( 'Your Key',);
-      FuLog(getString.toString());
-      },
+      FuLog(getString.toString());},
+      
       child: FuText( 'getString',
-      color: FuAppTheme.theme.textTheme.overline?.color,
+      color: themeData.textTheme.overline?.color,
       )).paddingOnly(left: 3),
 
       FuButton.rounded(
       backgroundColor: FuAppTheme.isDarkMode
-      ? FuAppTheme.theme.backgroundColor.withOpacity(1)
-      : FuAppTheme.theme.primaryColor,
-      onPressed: () async =>await FuSharedPreferences.deleteString( 'Your Key',),
+      ? themeData.backgroundColor.withOpacity(1)
+      : themeData.primaryColor,
+      onPressed: () async => await FuSharedPreferences.deleteString( 'Your Key',),
       child: FuText( 'delete key',
-      color: FuAppTheme.theme.textTheme.overline?.color,
+      color: themeData.textTheme.overline?.color,
       )).paddingOnly(left: 3),
 
       FuButton.rounded(
       backgroundColor: FuAppTheme.isDarkMode
-      ? FuAppTheme.theme.backgroundColor.withOpacity(1)
-      : FuAppTheme.theme.primaryColor,
+      ? themeData.backgroundColor.withOpacity(1)
+      : themeData.primaryColor,
       onPressed: () async => await FuSharedPreferences.clear('Your Key'),
       child: FuText('clear',
-      color: FuAppTheme.theme.textTheme.overline?.color,
+      color: themeData.textTheme.overline?.color,
       )).paddingOnly(left: 3),
 
       ],
       ),
       ),
       15.height,
+       FuDashedDivider(
+      color: themeData.colorScheme.onBackground,
+      ),
 
+      15.height,
+  Row(
+    children: [
+      const Text('Example replace From number English To Arabic'),
+      5.width,
+      Expanded(
+        child: Text(''. replaceFarsiNumber('123',),
+        style: TextStyle(color:themeData.primaryColor,fontSize: 20),
+        ),
+      ),
+    ],
+  ),
+   15.height,
       FuDashedDivider(
-      color: FuAppTheme.theme.colorScheme.onBackground,
+      color: themeData.colorScheme.onBackground,
       ),
 
       15.height,
@@ -215,7 +243,7 @@
       */
       FuButton.rounded(
       backgroundColor:
-      FuAppTheme.theme.buttonTheme.colorScheme?.background,
+      themeData.buttonTheme.colorScheme?.background,
       onPressed: () => FuLog('print Example Button'),
       child: FuText(
       'Example Button',
@@ -226,7 +254,7 @@
       properties [ FuContainer.bordered , FuContainer.none , FuContainer.roundBordered ,FuContainer.rounded] 
       */
       FuContainer.bordered(
-      color: FuAppTheme.theme.buttonTheme.colorScheme?.background,
+      color: themeData.buttonTheme.colorScheme?.background,
       child: FuText(
       'Example Container',
       color: FuAppTheme.customTheme.withe,
@@ -234,26 +262,6 @@
       ],
       ),
 
-      /*
-      Example  [FuCreditCard] - customizable credit card with all the necessary details in it.
-      */
-      SizedBox(
-      height: 300,
-      child: FuCreditCard(
-      onCreditCardCVVChanged: (creditCardCVV) {
-      'Example creditCardCVV';
-      },
-      onCreditCardDateChanged: (creditCardDate) {
-      'Example creditCardDate';
-      },
-      onCreditCardNameChanged: (creditCardName) {
-      'Example creditCardName';
-      },
-      onCreditCardNumberChanged: (creditCardNumber) {
-      ' Example creditCardNumber';
-      },
-      )),
-  
       ],
       
       )).paddingAll(12),

@@ -4,6 +4,6 @@ import 'package:flutter_utils_project/flutter_utils_project.dart';
 void main() {
   test('adds one to input values', () {
     final calculator = FlutterUtilsProject();
-    expect(calculator.init(), 3);
+    expect(FlutterUtilsProject.init(), 3);
   });
 }

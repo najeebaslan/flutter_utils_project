@@ -3,16 +3,20 @@
 * Version : 1.1.1
 * */
 
+import 'package:flutter/foundation.dart';
+
 /// [FuLog] - provides a way to print anything in the console-
 
-import 'dart:developer';
+
 
 class FuLog {
   static bool _enabled = true;
 
   FuLog(dynamic message) {
     if (_enabled) {
-      log(message.toString());
+      if (kDebugMode) {
+        print(message.toString());
+      }
     }
   }
 
