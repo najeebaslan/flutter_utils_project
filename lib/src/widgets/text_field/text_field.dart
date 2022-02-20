@@ -359,8 +359,7 @@ class _FuTextFieldState extends State<FuTextField> {
             prefixIconConstraints: widget.prefixIconConstraints,
             prefix: widget.prefix,
             labelText: labelText,
-            labelStyle:
-                widget.labelStyle ?? FuTextStyle.b1(color: labelTextColor),
+            labelStyle: widget.labelStyle ?? FuTextStyle.b1(color: labelTextColor),
             helperMaxLines: widget.helperMaxLines,
             isDense: widget.isDense ?? false,
             helperStyle: widget.helperStyle,

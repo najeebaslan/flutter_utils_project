@@ -48,6 +48,8 @@ WidgetsFlutterBinding.ensureInitialized();
 FlutterUtilsProject.init();}
 
 ```
+## Examples
+
 #### 1 -SnapHelperWidget 
 
 `SnapHelperWidget` makes easy implementation for `future` or `stream` builder
@@ -174,7 +176,6 @@ AutoSizeText(
 
 
 ```
-![Demo](https://raw.githubusercontent.com/najeebaslan/imagesPackgeFlutterUtilsPackage/master/stepgranularity.gif)
 
 `AutoSizeText` behaves exactly like a `Text`. The only difference is that it resizes text to fit within its bounds.
 
@@ -247,34 +248,34 @@ Handling for Error Exception Example  (No Internet Connection 😑
 
 ```dart
 
- Future<List<YOURMODEL>?> getProfile(BuildContext context) async {
-    try {
-      List<YOURMODEL> profile = [];//your model class
-      http.Response response = await http.get(
-        Uri.parse('YOUR URI'),
-        headers: YourHeader()
-      );
-      if (response.statusCode == 200) {
-        List list = json.decode(response.body);
-        profile = list.map((model) => YOURMODEL.fromJson(model)).toList();
-        return profile;
-      } else {
-        var massages = jsonDecode(response.body);
-        String error = massages['Error'];
-       // return showSnackBar(); //can you return anything
-       print(error)
-      }
-    } catch (err) {
-     /*
-        Handling for Error Exception Example  (No Internet Connection 😑
-       or Bad response format 👎
-       or Couldn't find the post 😱 )
-       And if nothing happens, he'll return the default mistake.
-       */
-      ApiErrorHandler.parseError(err, context,);
-      print("$err Error");
-    }
-    return null;
+  Future<List<YOURMODEL>?> getProfile(BuildContext context) async {
+  try {
+  List<YOURMODEL> profile = [];//your model class
+  http.Response response = await http.get(
+  Uri.parse('YOUR URI'),
+  headers: YourHeader()
+  );
+  if (response.statusCode == 200) {
+  List list = json.decode(response.body);
+  profile = list.map((model) => YOURMODEL.fromJson(model)).toList();
+  return profile;
+  } else {
+  var massages = jsonDecode(response.body);
+  String error = massages['Error'];
+  // return showSnackBar(); //can you return anything
+  print(error)
+  }
+  } catch (err) {
+  /*
+  Handling for Error Exception Example  (No Internet Connection 😑
+  or Bad response format 👎
+  or Couldn't find the post 😱 )
+  And if nothing happens, he'll return the default mistake.
+  */
+  ApiErrorHandler.parseError(err, context,);
+  print("$err Error");
+  }
+  return null;
   }
 
 

@@ -3,8 +3,8 @@
       import 'package:provider/provider.dart';
       import 'package:flutter/material.dart';
       import 'package:flutter_utils_project/flutter_utils_project.dart';
-
-      Future<void> main() async {
+      
+    Future<void>  main() async{
         ///this is page Flutter Error Details
         ///if you want test this widget enter it inside body <<Text( int.parse('text').toString()),>>
       FlutterErrorPage.flutterErrorDetails();
@@ -37,7 +37,6 @@
 
       class HomePage extends StatefulWidget {
       const HomePage({Key? key}) : super(key: key);
-
       @override
       _MyCustomWidgetState createState() => _MyCustomWidgetState();
       }
@@ -80,9 +79,9 @@
       ],
       backgroundColor: themeData.appBarTheme.backgroundColor,
       ),
-      body: SingleChildScrollView(
-      child: Column(
-      mainAxisAlignment: MainAxisAlignment.center,
+      body:
+       ListView(padding: FuSpacing.all(12),
+      // mainAxisAlignment: MainAxisAlignment.center,
 
       /* 
       Example Spacing any Widget, and There are also many features
@@ -105,14 +104,16 @@
       child: Row(
       children: [
      
-       FuTextField(
+       
+      FuTextField(
       // textFieldType: FuTextFieldType.email,
       decoration: InputDecoration(
       hintText: 'Email Address',
       labelStyle: FuTextStyle.b1(color: Colors.grey[700]),
       labelText: 'Email Address',
-      contentPadding: FuSpacing.all(16.0),),
+      contentPadding: const EdgeInsets.all(16)),
       alignLabelWithHint: true,).expand(),
+        
       
       ],
       ),
@@ -129,7 +130,7 @@
 
       15.height,
 
-      Row( children:const [  FuText( 'Example SharedPreferences', ) ],).paddingBottom(12),
+      Row(children:const[  FuText( 'Example SharedPreferences', ) ],).paddingBottom(12),
 
       FuContainer.none(
       borderRadius: radius(),
@@ -264,7 +265,7 @@
 
       ],
       
-      )).paddingAll(12),
+      )
       );
       }
       }
