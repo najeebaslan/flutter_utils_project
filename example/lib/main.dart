@@ -1,5 +1,4 @@
 
-    
       import 'package:provider/provider.dart';
       import 'package:flutter/material.dart';
       import 'package:flutter_utils_project/flutter_utils_project.dart';
@@ -80,8 +79,8 @@
       backgroundColor: themeData.appBarTheme.backgroundColor,
       ),
       body:
-       ListView(padding: FuSpacing.all(12),
-      // mainAxisAlignment: MainAxisAlignment.center,
+       Column(
+      mainAxisAlignment: MainAxisAlignment.center,
 
       /* 
       Example Spacing any Widget, and There are also many features
@@ -105,14 +104,14 @@
       children: [
      
        
-      FuTextField(
+     Expanded(child:  FuTextField(
       // textFieldType: FuTextFieldType.email,
       decoration: InputDecoration(
       hintText: 'Email Address',
       labelStyle: FuTextStyle.b1(color: Colors.grey[700]),
       labelText: 'Email Address',
       contentPadding: const EdgeInsets.all(16)),
-      alignLabelWithHint: true,).expand(),
+      alignLabelWithHint: true,),)
         
       
       ],
@@ -265,7 +264,7 @@
 
       ],
       
-      )
+      ).paddingAll(12)
       );
       }
       }
