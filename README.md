@@ -1,7 +1,7 @@
 # flutter_utils_project
-[![](https://img.shields.io/badge/build-1.1.1-brightgreen)][repo_link]
+![](https://img.shields.io/badge/build-1.1.1-brightgreen)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![style: effective dart][badge]][badge_link]
+
 
 ## Getting Started
 
